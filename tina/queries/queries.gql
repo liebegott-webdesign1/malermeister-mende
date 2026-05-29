@@ -1,0 +1,6 @@
+query homeQuery {
+  ...LayoutQueryFragment
+  home(relativePath: "index.json") {
+    ...HomeParts
+  }
+}

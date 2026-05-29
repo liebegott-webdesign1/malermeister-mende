@@ -1,0 +1,228 @@
+{
+  "seo": {
+    "title": "Malermeister Mende — Maler & dekorative Techniken in Halle (Saale)",
+    "description": "Malermeister Steffen Mende aus Halle (Saale): klassische Malerarbeiten, Stuckmarmor, Lasuren, Spritztechnik, Tapezieren, dekorative Kreativtechnik und Kunstmalerei. Meisterbetrieb — kostenloses Angebot anfordern."
+  },
+  "hero": {
+    "badge": "Meisterbetrieb seit Jahrzehnten",
+    "headlineLead": "Malermeister in",
+    "headlineHighlight": "Halle (Saale)",
+    "subline": "Vom sauberen Anstrich bis zur kunstvollen Wandgestaltung: Meisterhandwerk, dekorative Techniken wie Stuckmarmor und Lasuren — und ein Maler, der auch Kunstmaler ist. Festangebot nach Vor-Ort-Termin, schriftlich und unverbindlich.",
+    "primaryCtaLabel": "Kostenloses Angebot anfordern",
+    "trustNote": "Unverbindlich & kostenlos · Persönliche Beratung in Halle und Umgebung",
+    "image": "/assets/bilder/IMG_7713_Kopie.webp"
+  },
+  "trustBar": [
+    { "title": "Meisterbetrieb", "subtitle": "geprüfte Qualität" },
+    { "title": "Halle & Umgebung", "subtitle": "regional verwurzelt" },
+    { "title": "Festpreis", "subtitle": "schriftlich vor Auftrag" },
+    { "title": "Sauber & pünktlich", "subtitle": "inkl. Endreinigung" }
+  ],
+  "nutzen": {
+    "eyebrow": "Warum Malermeister Mende",
+    "heading": "Handwerk, das man sieht — und Gestaltung, die bleibt.",
+    "intro": "Wir machen nicht nur Wände schön. Als Meisterbetrieb mit eigener Handschrift in dekorativen Techniken verbinden wir solides Malerhandwerk mit gestalterischem Anspruch — für Privatkunden in Halle (Saale) und der Region.",
+    "cards": [
+      {
+        "title": "Festpreis nach Besichtigung",
+        "text": "Ein verbindliches, schriftliches Angebot nach dem Vor-Ort-Termin. Kein Kleingedrucktes, keine Überraschung auf der Rechnung."
+      },
+      {
+        "title": "Dekorative Techniken vom Profi",
+        "text": "Stuckmarmor, Stucco Veneziano, Lasuren, Metalleffekte — gestalterische Oberflächen, die kaum ein Malerbetrieb in dieser Tiefe beherrscht."
+      },
+      {
+        "title": "Der Maler ist Kunstmaler",
+        "text": "Steffen Mende malt auch Gemälde — u. a. historische Halle-Motive. Dieses geschulte Auge fürs Detail steckt in jedem Auftrag."
+      }
+    ]
+  },
+  "leistungen": {
+    "eyebrow": "Leistungen",
+    "heading": "Was wir für Sie tun",
+    "intro": "Vom klassischen Anstrich bis zur Kreativtechnik — alles aus einer Meisterhand.",
+    "items": [
+      {
+        "image": "/assets/bilder/Filzen_1.webp",
+        "title": "Klassische Malerarbeiten",
+        "text": "Decken und Wände in sauberer Ausführung — innen, in jeder Farbe.",
+        "href": "#galerie"
+      },
+      {
+        "image": "/assets/bilder/Tapezierarbeiten_4.webp",
+        "title": "Tapezierarbeiten",
+        "text": "Rauhfaser, Gewebe, edle Wandbeläge und Baumwollbeschichtung.",
+        "href": "#galerie"
+      },
+      {
+        "image": "/assets/bilder/Lackierarbeiten.webp",
+        "title": "Lackierarbeiten",
+        "text": "Fenster, Türen, Heizkörper und Eisenwerk inkl. Korrosionsschutz.",
+        "href": "#galerie"
+      },
+      {
+        "image": "/assets/bilder/IMG_3124.webp",
+        "title": "Spritzarbeiten (Airless)",
+        "text": "Großflächig, gleichmäßig und schnell — auch für Spezialobjekte.",
+        "href": "#galerie"
+      },
+      {
+        "image": "/assets/bilder/Saeule_Stucco.webp",
+        "title": "Holz & Marmor / Stuckmarmor",
+        "text": "Edle Imitationstechniken und Stuckmarmor wie aus der Restaurierung.",
+        "href": "/holz-und-marmor"
+      },
+      {
+        "image": "/assets/bilder/Lasur_Marmorlook.webp",
+        "title": "Lasuren & Kreativtechnik",
+        "text": "Wandlasuren, Metalleffekte, Wickeltechnik — Oberflächen mit Charakter.",
+        "href": "#galerie"
+      }
+    ]
+  },
+  "galerie": {
+    "eyebrow": "Referenzen",
+    "heading": "Arbeiten aus unserer Werkstatt",
+    "intro": "Eine Auswahl echter Projekte und Techniken — nach Bereich gruppiert. Tippen Sie ein Bild an, um es groß zu sehen.",
+    "filters": [
+      { "key": "all", "label": "Alle" },
+      { "key": "holz", "label": "Holz & Marmor" },
+      { "key": "stuck", "label": "Stuckmarmor" },
+      { "key": "lasur", "label": "Lasurtechniken" },
+      { "key": "spritz", "label": "Spritzarbeiten" },
+      { "key": "tapete", "label": "Tapezieren" },
+      { "key": "dekor", "label": "Dekor & Kreativ" },
+      { "key": "kunst", "label": "Kunstmalerei" }
+    ],
+    "items": [
+      { "image": "/assets/bilder/Saeule_Stucco.webp", "alt": "Säule in Stuckmarmor-Technik", "category": "holz" },
+      { "image": "/assets/bilder/Azul_do_Macaubas.webp", "alt": "Marmorimitation Azul do Macaubas", "category": "holz" },
+      { "image": "/assets/bilder/Grosse_antike_Brekzie.webp", "alt": "Marmorimitation antike Brekzie", "category": "holz" },
+      { "image": "/assets/bilder/Rosenholz.webp", "alt": "Holzimitation Rosenholz", "category": "holz" },
+      { "image": "/assets/bilder/Zitronenholz_Schatten.webp", "alt": "Holzimitation Zitronenholz", "category": "holz" },
+      { "image": "/assets/bilder/Lebensbaum.webp", "alt": "Holzdekor Lebensbaum", "category": "holz" },
+      { "image": "/assets/bilder/Dachs_Schlaeger_Schatten.webp", "alt": "Detailarbeit Holz und Marmor", "category": "holz" },
+      { "image": "/assets/bilder/Glaettung.webp", "alt": "Glättung von Stuckmarmor", "category": "stuck" },
+      { "image": "/assets/bilder/Rakeln.webp", "alt": "Rakeln von Stuckmarmor", "category": "stuck" },
+      { "image": "/assets/bilder/Scheiben_schneiden.webp", "alt": "Stuckmarmor Scheiben schneiden", "category": "stuck" },
+      { "image": "/assets/bilder/Marmorwuerfel_Imitat.webp", "alt": "Marmorwürfel-Imitat aus Stuckmarmor", "category": "stuck" },
+      { "image": "/assets/bilder/Staeuben.webp", "alt": "Stuckmarmor stäuben", "category": "stuck" },
+      { "image": "/assets/bilder/Lasur_Marmorlook.webp", "alt": "Wandlasur im Marmorlook", "category": "lasur" },
+      { "image": "/assets/bilder/Lasur_2.webp", "alt": "Wandlasur Beispiel", "category": "lasur" },
+      { "image": "/assets/bilder/Lasur_3.webp", "alt": "Wandlasur Beispiel", "category": "lasur" },
+      { "image": "/assets/bilder/Metalliclasur.webp", "alt": "Metalliclasur an der Wand", "category": "lasur" },
+      { "image": "/assets/bilder/Lasur_TE_1.webp", "alt": "Lasurtechnik Detail", "category": "lasur" },
+      { "image": "/assets/bilder/IMG_3124.webp", "alt": "Airless-Spritzarbeiten", "category": "spritz" },
+      { "image": "/assets/bilder/Wohnwagen_gespritzt.webp", "alt": "Wohnwagen im Airless-Verfahren gespritzt", "category": "spritz" },
+      { "image": "/assets/bilder/Tapezierarbeiten_1.webp", "alt": "Tapezierarbeiten", "category": "tapete" },
+      { "image": "/assets/bilder/Tapezierarbeiten_3.webp", "alt": "Tapezierarbeiten", "category": "tapete" },
+      { "image": "/assets/bilder/Tapezierarbeiten_4.webp", "alt": "Tapezierarbeiten", "category": "tapete" },
+      { "image": "/assets/bilder/IMG_7837.webp", "alt": "Tapezierte Wand", "category": "tapete" },
+      { "image": "/assets/bilder/Metalleffekt.webp", "alt": "Metalleffekt-Oberfläche", "category": "dekor" },
+      { "image": "/assets/bilder/Saeule_Violett.webp", "alt": "Dekorative Säulengestaltung", "category": "dekor" },
+      { "image": "/assets/bilder/Gold_auf_Gruen.webp", "alt": "Dekortechnik Gold auf Grün", "category": "dekor" },
+      { "image": "/assets/bilder/Schlagmetall_1.webp", "alt": "Schlagmetall-Technik", "category": "dekor" },
+      { "image": "/assets/bilder/Urzeittier_Echse.webp", "alt": "Kreative Wandgestaltung Motiv", "category": "dekor" },
+      { "image": "/assets/bilder/Loch_Ness.webp", "alt": "Dekorative Struktur Loch Ness", "category": "dekor" },
+      { "image": "/assets/bilder/Marktplatz_40x50.webp", "alt": "Gemälde Marktplatz Halle", "category": "kunst" },
+      { "image": "/assets/bilder/Domplatz_40X30.webp", "alt": "Gemälde Domplatz Halle", "category": "kunst" },
+      { "image": "/assets/bilder/Giebichenstein_30x40.webp", "alt": "Gemälde Burg Giebichenstein", "category": "kunst" },
+      { "image": "/assets/bilder/Eselsbrunnen_24X30_-_Kopie.webp", "alt": "Gemälde Eselsbrunnen Halle", "category": "kunst" }
+    ]
+  },
+  "einwand": {
+    "eyebrow": "Ihre Sicherheit",
+    "heading": "Damit Sie sich keine Sorgen machen müssen",
+    "items": [
+      {
+        "question": "„Wird das am Ende viel teurer?“",
+        "answer": "Nein. Sie bekommen nach dem kostenlosen Vor-Ort-Termin ein verbindliches, schriftliches Festangebot. Was drinsteht, gilt — ohne Kleingedrucktes."
+      },
+      {
+        "question": "„Wird sauber und ordentlich gearbeitet?“",
+        "answer": "Meisterqualität von der Vorbereitung bis zur Endreinigung. Möbel rücken, abdecken, sauber hinterlassen — das gehört für uns dazu."
+      },
+      {
+        "question": "„Hält der Betrieb die Termine ein?“",
+        "answer": "Sie haben einen festen Ansprechpartner — den Meister selbst. Klare Absprachen, verlässliche Termine, kein anonymes Subunternehmer-Karussell."
+      }
+    ],
+    "ctaLabel": "Jetzt unverbindlich anfragen"
+  },
+  "ablauf": {
+    "eyebrow": "So läuft es ab",
+    "heading": "In vier einfachen Schritten zum Ergebnis",
+    "steps": [
+      { "number": "01", "title": "Anfrage", "text": "Rufen Sie an oder schreiben Sie uns kurz, worum es geht." },
+      { "number": "02", "title": "Vor-Ort-Termin", "text": "Wir schauen uns alles in Ruhe an — kostenlos und unverbindlich." },
+      { "number": "03", "title": "Festangebot", "text": "Sie erhalten ein transparentes, schriftliches Angebot zum Festpreis." },
+      { "number": "04", "title": "Ausführung", "text": "Saubere Arbeit zum vereinbarten Termin, inklusive Endreinigung." }
+    ]
+  },
+  "bewertungen": {
+    "eyebrow": "Kundenstimmen",
+    "heading": "Was Kunden später hier sagen werden",
+    "placeholderNote": "Platzhalter: Dies sind Beispielkarten. Vor dem Livegang durch echte Google-Bewertungen ersetzen.",
+    "items": [
+      {
+        "quote": "„Beispieltext — durch echte Google-Bewertung ersetzen. Hier steht später, wie zufrieden ein Kunde mit der Arbeit war.“",
+        "author": "Mustername · Halle (Saale)"
+      },
+      {
+        "quote": "„Beispieltext — durch echte Google-Bewertung ersetzen. Platz für eine konkrete Projektbeschreibung aus Kundensicht.“",
+        "author": "Mustername · Halle-Neustadt"
+      },
+      {
+        "quote": "„Beispieltext — durch echte Google-Bewertung ersetzen. Empfehlung und Lob für Termintreue und Sauberkeit.“",
+        "author": "Mustername · Saalekreis"
+      }
+    ]
+  },
+  "ueberUns": {
+    "eyebrow": "Über uns",
+    "heading": "Steffen Mende — Malermeister & Kunstmaler",
+    "paragraphs": [
+      {
+        "text": "Hinter Malermeister Mende steht ein Handwerker, der sein Fach von Grund auf gelernt hat — und der über das klassische Malerhandwerk hinausgeht. Steffen Mende beherrscht anspruchsvolle dekorative Techniken wie Stuckmarmor, Stucco Veneziano und Lasuren und ist zugleich Kunstmaler mit eigenen Werken, darunter historische Motive aus Halle."
+      },
+      {
+        "text": "Für Sie heißt das: ein fester Ansprechpartner, ein geschultes Auge für Gestaltung und Qualität, von der ersten Beratung bis zur Endreinigung."
+      }
+    ],
+    "image": "/assets/iStock-2169196050.webp",
+    "imageNote": "Foto folgt",
+    "ctaLabel": "Mehr über den Kunstmaler →"
+  },
+  "faq": {
+    "eyebrow": "Häufige Fragen",
+    "heading": "Gut zu wissen",
+    "items": [
+      {
+        "question": "Was kostet das Streichen meiner Wohnung?",
+        "answer": "Das hängt von Fläche, Zustand und gewünschter Technik ab. Deshalb schauen wir uns alles bei einem kostenlosen Vor-Ort-Termin an und geben Ihnen anschließend ein verbindliches Festangebot — ohne versteckte Kosten."
+      },
+      {
+        "question": "In welchem Gebiet sind Sie tätig?",
+        "answer": "Wir arbeiten in Halle (Saale) und der näheren Umgebung. Fragen Sie einfach an — wir sagen Ihnen ehrlich, ob Ihr Objekt in unserem Einsatzgebiet liegt."
+      },
+      {
+        "question": "Bieten Sie auch dekorative Spezialtechniken an?",
+        "answer": "Ja. Stuckmarmor, Stucco Veneziano, Holz- und Marmorimitationen, Wandlasuren, Metalleffekte und weitere Kreativtechniken gehören zu unseren Spezialgebieten — etwas, das viele Malerbetriebe nicht anbieten."
+      },
+      {
+        "question": "Räumen Sie Möbel weg und reinigen am Ende?",
+        "answer": "Auf Wunsch übernehmen wir den Komplettservice: Möbel rücken, abdecken, verpacken und nach getaner Arbeit die Endreinigung. Sie bekommen Ihre Räume bezugsfertig zurück."
+      },
+      {
+        "question": "Wie schnell bekomme ich eine Rückmeldung?",
+        "answer": "Am schnellsten erreichen Sie uns telefonisch unter 0345 120 78 57. Anfragen über das Formular beantworten wir in der Regel am nächsten Werktag."
+      }
+    ],
+    "footerNote": "Ihre Frage ist nicht dabei? Rufen Sie einfach an →"
+  },
+  "kontakt": {
+    "eyebrow": "Kontakt",
+    "heading": "Kostenloses Angebot anfordern",
+    "intro": "Erzählen Sie uns kurz, worum es geht — wir melden uns für einen unverbindlichen Vor-Ort-Termin. Lieber direkt sprechen?"
+  }
+}

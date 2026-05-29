@@ -1,0 +1,49 @@
+{
+  "brand": {
+    "name": "Malermeister Mende",
+    "location": "Halle (Saale)"
+  },
+  "contact": {
+    "phoneDisplay": "0345 120 78 57",
+    "phoneRaw": "03451207857",
+    "mobile": "0170 735 82 00",
+    "email": "steffen_mende@t-online.de",
+    "addressStreet": "Lutherstraße 66",
+    "addressCity": "06110 Halle (Saale)"
+  },
+  "nav": [
+    {
+      "label": "Leistungen",
+      "href": "/#leistungen"
+    },
+    {
+      "label": "Leistungen & Techniken",
+      "href": "",
+      "dropdown": [
+        { "label": "Holz & Marmor", "href": "/holz-und-marmor" },
+        { "label": "Stuckmarmor", "href": "/#galerie" },
+        { "label": "Lasurtechniken", "href": "/#galerie" },
+        { "label": "Spritzarbeiten", "href": "/#galerie" },
+        { "label": "Tapezierarbeiten", "href": "/#galerie" },
+        { "label": "Dekor & Kreativtechnik", "href": "/#galerie" },
+        { "label": "Kunstmalerei", "href": "/der-kunstmaler" }
+      ]
+    },
+    {
+      "label": "Referenzen",
+      "href": "/#galerie"
+    },
+    {
+      "label": "Über uns",
+      "href": "/#ueber-uns"
+    },
+    {
+      "label": "Kontakt",
+      "href": "/#kontakt"
+    }
+  ],
+  "ctaLabel": "Angebot anfordern",
+  "theme": {
+    "color": "#166534"
+  }
+}

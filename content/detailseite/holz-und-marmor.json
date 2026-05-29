@@ -1,0 +1,131 @@
+{
+  "seo": {
+    "title": "Holz & Marmor — Imitationstechniken & Stuckmarmor | Malermeister Mende Halle",
+    "description": "Holz- und Marmorimitation sowie Stuckmarmor vom Malermeister Mende in Halle (Saale): edle Oberflächen wie aus der Restaurierung. Kostenloses Angebot anfordern."
+  },
+  "hero": {
+    "badge": "",
+    "headlineLead": "Holz & Marmor —",
+    "headlineHighlight": "edle Imitationstechniken",
+    "subline": "Marmor, der keiner ist. Holz, das gemalt wurde. Wir gestalten Oberflächen in feinster Holz- und Marmorimitation sowie echtem Stuckmarmor — eine handwerkliche Königsdisziplin, die viele Malerbetriebe nicht beherrschen.",
+    "image": "/assets/bilder/Saeule_Stucco.webp",
+    "primaryCtaLabel": "Kostenloses Angebot anfordern",
+    "primaryCtaHref": "/#kontakt",
+    "backLabel": "Holz & Marmor"
+  },
+  "intro": {
+    "eyebrow": "Die Technik",
+    "heading": "Oberflächen wie aus der Restaurierung",
+    "paragraphs": [
+      {
+        "text": "Holz- und Marmorimitation ist reine Maltechnik: Mit Lasuren, Pinseln und ruhiger Hand entstehen Maserungen und Steinadern, die vom Original kaum zu unterscheiden sind. Beim Stuckmarmor wird mit pigmentiertem Gips ein massiver, polierfähiger Kunstmarmor aufgebaut — eine Technik mit jahrhundertealter Tradition."
+      },
+      {
+        "text": "Wo echter Marmor zu schwer, zu teuer oder denkmalpflegerisch nicht möglich ist, schaffen wir die gleiche Wirkung — an Säulen, Wänden, Türen und Bauteilen."
+      }
+    ]
+  },
+  "galerie": {
+    "eyebrow": "Galerie",
+    "heading": "Holz, Marmor & Stuckmarmor",
+    "intro": "Echte Arbeiten und Techniken — tippen Sie ein Bild an, um es groß zu sehen.",
+    "items": [
+      {
+        "image": "/assets/bilder/Saeule_Stucco.webp",
+        "alt": "Säule in Stuckmarmor"
+      },
+      {
+        "image": "/assets/bilder/Azul_do_Macaubas.webp",
+        "alt": "Marmorimitation Azul do Macaubas"
+      },
+      {
+        "image": "/assets/bilder/Grosse_antike_Brekzie.webp",
+        "alt": "Marmorimitation antike Brekzie"
+      },
+      {
+        "image": "/assets/bilder/Rosenholz.webp",
+        "alt": "Holzimitation Rosenholz"
+      },
+      {
+        "image": "/assets/bilder/Zitronenholz_Schatten.webp",
+        "alt": "Holzimitation Zitronenholz"
+      },
+      {
+        "image": "/assets/bilder/Lebensbaum.webp",
+        "alt": "Holzdekor Lebensbaum"
+      },
+      {
+        "image": "/assets/bilder/Dachs_Schlaeger_Schatten.webp",
+        "alt": "Detailarbeit Holz und Marmor"
+      },
+      {
+        "image": "/assets/bilder/Emmenegger_2.webp",
+        "alt": "Marmortechnik Detail"
+      },
+      {
+        "image": "/assets/bilder/Schiessl2.webp",
+        "alt": "Stuckmarmor Arbeitsprobe"
+      },
+      {
+        "image": "/assets/bilder/Marmorwuerfel_Imitat.webp",
+        "alt": "Marmorwürfel-Imitat aus Stuckmarmor"
+      },
+      {
+        "image": "/assets/bilder/Glaettung.webp",
+        "alt": "Glättung von Stuckmarmor"
+      },
+      {
+        "image": "/assets/bilder/Rakeln.webp",
+        "alt": "Rakeln von Stuckmarmor"
+      },
+      {
+        "image": "/assets/bilder/Raspeln.webp",
+        "alt": "Stuckmarmor raspeln"
+      },
+      {
+        "image": "/assets/bilder/Scheiben_schneiden.webp",
+        "alt": "Stuckmarmor Scheiben schneiden"
+      },
+      {
+        "image": "/assets/bilder/Staeuben.webp",
+        "alt": "Stuckmarmor stäuben"
+      },
+      {
+        "image": "/assets/bilder/Stuckmarmor_Faktenauslese.webp",
+        "alt": "Stuckmarmor Faktenauslese"
+      }
+    ]
+  },
+  "ablauf": {
+    "eyebrow": "So läuft es ab",
+    "heading": "Von der Idee zur fertigen Oberfläche",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Beratung",
+        "text": "Wir besprechen Wunsch-Optik, Material und Einsatzort."
+      },
+      {
+        "number": "02",
+        "title": "Muster",
+        "text": "Auf Wunsch fertigen wir eine Musterprobe der gewünschten Technik an."
+      },
+      {
+        "number": "03",
+        "title": "Festangebot",
+        "text": "Transparentes, schriftliches Angebot zum Festpreis."
+      },
+      {
+        "number": "04",
+        "title": "Ausführung",
+        "text": "Sorgfältige Umsetzung in Meisterqualität, inkl. Endreinigung."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Interesse an einer edlen Oberfläche?",
+    "text": "Fordern Sie ein kostenloses, unverbindliches Festangebot an — oder rufen Sie direkt an.",
+    "primaryLabel": "Kostenloses Angebot anfordern",
+    "primaryHref": "/#kontakt"
+  }
+}

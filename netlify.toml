@@ -1,0 +1,11 @@
+# Netlify-Build fuer die Tina-/Next.js-App
+# Der geheime TINA_TOKEN wird NICHT hier hinterlegt, sondern im Netlify-Dashboard
+# (Site settings -> Environment variables), damit er nicht oeffentlich im Repo steht.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  # NEXT_PUBLIC_* sind ohnehin oeffentlich (landen im Browser-Bundle) -> hier ok:
+  NEXT_PUBLIC_TINA_CLIENT_ID = "f2370433-aa06-47b9-800f-77c9c1b17124"
+  NEXT_PUBLIC_TINA_BRANCH = "main"

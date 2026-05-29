@@ -1,0 +1,86 @@
+{
+  "seo": {
+    "title": "Der Kunstmaler — Steffen Mende | Gemälde & Halle-Motive",
+    "description": "Steffen Mende ist nicht nur Malermeister, sondern auch Kunstmaler. Gemälde mit historischen Motiven aus Halle (Saale) und Umgebung. Werke ansehen & Kontakt aufnehmen."
+  },
+  "hero": {
+    "badge": "Mehr als Handwerk",
+    "headlineLead": "Steffen Mende —",
+    "headlineHighlight": "der Kunstmaler",
+    "subline": "Steffen Mende ist Malermeister und Künstler in einem. Neben dem Handwerk entstehen in seinem Atelier Gemälde — darunter stimmungsvolle, historische Motive aus Halle (Saale) und der Region. Dieses künstlerische Auge prägt jede Arbeit, ob an der Wand oder auf der Leinwand.",
+    "image": "/assets/bilder/Marktplatz_40x50.webp",
+    "primaryCtaLabel": "Gemälde ansehen",
+    "primaryCtaHref": "#galerie",
+    "backLabel": "Der Kunstmaler"
+  },
+  "intro": {
+    "eyebrow": "Über den Künstler",
+    "heading": "Handwerk und Kunst aus einer Hand",
+    "paragraphs": [
+      {
+        "text": "Wer täglich mit Farbe, Licht und Oberfläche arbeitet, entwickelt ein besonderes Gespür für Komposition. Bei Steffen Mende wird daraus mehr als ein Beruf: In seinen Gemälden hält er Plätze, Bauwerke und Stimmungen aus Halle und Umgebung fest — vom Marktplatz über den Dom bis zur Burg Giebichenstein."
+      },
+      {
+        "text": "Für Auftraggeber bedeutet diese Doppelbegabung: ein Meister, der nicht nur sauber arbeitet, sondern gestalten kann — mit dem Blick eines Künstlers für das richtige Detail."
+      }
+    ]
+  },
+  "galerie": {
+    "eyebrow": "Galerie",
+    "heading": "Gemälde von Steffen Mende",
+    "intro": "Eine Auswahl seiner Werke — tippen Sie ein Bild an, um es groß zu sehen.",
+    "items": [
+      {
+        "image": "/assets/bilder/Historischer_Marktplatz_30x40.webp",
+        "alt": "Gemälde Historischer Marktplatz Halle"
+      },
+      {
+        "image": "/assets/bilder/Marktplatz_40x50.webp",
+        "alt": "Gemälde Marktplatz Halle"
+      },
+      {
+        "image": "/assets/bilder/Domplatz_40X30.webp",
+        "alt": "Gemälde Domplatz Halle"
+      },
+      {
+        "image": "/assets/bilder/Eselsbrunnen_24X30_-_Kopie.webp",
+        "alt": "Gemälde Eselsbrunnen Halle"
+      },
+      {
+        "image": "/assets/bilder/Giebichenstein_30x40.webp",
+        "alt": "Gemälde Burg Giebichenstein"
+      },
+      {
+        "image": "/assets/bilder/Giebichenstein_30x24._-_Kopie.webp",
+        "alt": "Gemälde Giebichenstein Ansicht"
+      },
+      {
+        "image": "/assets/bilder/Landsberg_Doppelkapelle_30x24_-_Kopie.webp",
+        "alt": "Gemälde Landsberger Doppelkapelle"
+      },
+      {
+        "image": "/assets/bilder/historisches_Stadttheater_um_1900_30x24_-_Kopie.webp",
+        "alt": "Gemälde historisches Stadttheater um 1900"
+      },
+      {
+        "image": "/assets/bilder/51F0C846CF694FEF9AB1679327C9AF82.webp",
+        "alt": "Gemälde von Steffen Mende"
+      },
+      {
+        "image": "/assets/bilder/5ED495B4EA08446B9F79A197E2C15420.webp",
+        "alt": "Gemälde von Steffen Mende"
+      }
+    ]
+  },
+  "ablauf": {
+    "eyebrow": "",
+    "heading": "",
+    "steps": []
+  },
+  "cta": {
+    "heading": "Ein Werk entdeckt oder Lust auf eine Auftragsarbeit?",
+    "text": "Ob Gemälde oder kunstvolle Wandgestaltung in Ihren Räumen — sprechen Sie uns gern an.",
+    "primaryLabel": "Kontakt aufnehmen",
+    "primaryHref": "/#kontakt"
+  }
+}
