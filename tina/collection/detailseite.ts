@@ -81,6 +81,33 @@ const Detailseite: Collection = {
           label: "Zurück-Link Beschriftung (Breadcrumb)",
           name: "backLabel",
         },
+        {
+          type: "string",
+          label: "Breadcrumb — Eltern-Beschriftung (optional)",
+          name: "breadcrumbParentLabel",
+          description:
+            "Optional. Wenn gesetzt, wird ein 3-stufiger Breadcrumb gerendert (Start › Eltern › aktuell).",
+        },
+        {
+          type: "string",
+          label: "Breadcrumb — Eltern-Link (Route oder Anker)",
+          name: "breadcrumbParentHref",
+        },
+        {
+          type: "string",
+          label: "Sekundärer CTA — Beschriftung (optional)",
+          name: "secondaryCtaLabel",
+        },
+        {
+          type: "string",
+          label: "Sekundärer CTA — Link (Route oder Anker)",
+          name: "secondaryCtaHref",
+        },
+        {
+          type: "string",
+          label: "Hero-Bild — Alt-Text (optional)",
+          name: "imageAlt",
+        },
       ],
     },
 
@@ -109,6 +136,38 @@ const Detailseite: Collection = {
               label: "Text",
               name: "text",
               ui: { component: "textarea" },
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Info-Karte (rechte Spalte, optional)",
+          name: "sideCard",
+          description:
+            "Optional. Wenn gesetzt, erscheint rechts eine weiße Info-Karte mit Überschrift, Bullet-Liste und optionalem CTA-Link.",
+          fields: [
+            { type: "string", label: "Überschrift", name: "heading" },
+            {
+              type: "object",
+              label: "Listenpunkte",
+              name: "items",
+              list: true,
+              ui: {
+                itemProps: (item) => ({ label: item?.text || "Listenpunkt" }),
+                defaultItem: { text: "Listenpunkt" },
+              },
+              fields: [{ type: "string", label: "Text", name: "text" }],
+            },
+            {
+              type: "string",
+              label: "CTA — Beschriftung (optional)",
+              name: "ctaLabel",
+              ui: { component: "textarea" },
+            },
+            {
+              type: "string",
+              label: "CTA — Link (Route oder Anker)",
+              name: "ctaHref",
             },
           ],
         },
@@ -141,6 +200,11 @@ const Detailseite: Collection = {
           fields: [
             { type: "image", label: "Bild", name: "image" },
             { type: "string", label: "Alt-Text", name: "alt" },
+            {
+              type: "string",
+              label: "Bildunterschrift (optional)",
+              name: "caption",
+            },
           ],
         },
       ],

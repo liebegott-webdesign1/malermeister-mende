@@ -59,7 +59,7 @@ export function Leistungen({ eyebrow, heading, intro, items }: LeistungenProps) 
 
         <div className="mt-10">
           <a
-            href="#galerie"
+            href="/der-kunstmaler"
             className="inline-flex items-center gap-2 text-bordeaux font-semibold hover:gap-3 transition-all"
           >
             Steffen Mende als Kunstmaler kennenlernen →

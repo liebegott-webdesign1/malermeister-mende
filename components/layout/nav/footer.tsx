@@ -7,9 +7,18 @@ export const Footer = () => {
   const { globalSettings } = useLayout();
   const brand = globalSettings?.brand;
   const contact = globalSettings?.contact;
-  const nav = globalSettings?.nav ?? [];
 
   const year = new Date().getFullYear();
+
+  // Footer-Spalte "Seiten" — exakt die Original-Einträge aus index.html
+  // (bewusst hardcodiert statt aus global.nav, damit die Liste 1:1 stimmt).
+  const footerPages = [
+    { label: "Leistungen", href: "/#leistungen" },
+    { label: "Referenzen", href: "/#galerie" },
+    { label: "Holz & Marmor", href: "/holz-und-marmor" },
+    { label: "Der Kunstmaler", href: "/der-kunstmaler" },
+    { label: "Kontakt", href: "/#kontakt" },
+  ];
 
   // Markenname mit hervorgehobenem letzten Wort
   const renderBrand = () => {
@@ -80,10 +89,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold text-white mb-4">Seiten</h4>
             <ul className="space-y-2 text-cream/70 text-sm">
-              {nav.map((item, index) => (
+              {footerPages.map((item, index) => (
                 <li key={index}>
-                  <Link href={item?.href ?? "#"} className="hover:text-white">
-                    {item?.label}
+                  <Link href={item.href} className="hover:text-white">
+                    {item.label}
                   </Link>
                 </li>
               ))}

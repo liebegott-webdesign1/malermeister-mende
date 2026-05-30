@@ -7,5 +7,5 @@
 
 [build.environment]
   # NEXT_PUBLIC_* sind ohnehin oeffentlich (landen im Browser-Bundle) -> hier ok:
-  NEXT_PUBLIC_TINA_CLIENT_ID = "f2370433-aa06-47b9-800f-77c9c1b17124"
+  NEXT_PUBLIC_TINA_CLIENT_ID = "fca7a863-35b8-4820-8179-37bc7f898b74"
   NEXT_PUBLIC_TINA_BRANCH = "main"

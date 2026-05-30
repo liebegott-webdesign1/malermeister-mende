@@ -3,6 +3,7 @@ import { LayoutProvider } from "./layout-context";
 import client from "../../tina/__generated__/client";
 import { Header } from "./nav/header";
 import { Footer } from "./nav/footer";
+import { StickyBar } from "../mende/sticky-bar";
 
 type LayoutProps = PropsWithChildren & {
   rawPageData?: any;
@@ -92,6 +93,7 @@ export default async function Layout({ children, rawPageData }: LayoutProps) {
         <Header />
         <main className="flex-1 overflow-x-hidden">{children}</main>
         <Footer />
+        <StickyBar />
       </div>
     </LayoutProvider>
   );

@@ -9,9 +9,12 @@
     "headlineHighlight": "edle Imitationstechniken",
     "subline": "Marmor, der keiner ist. Holz, das gemalt wurde. Wir gestalten Oberflächen in feinster Holz- und Marmorimitation sowie echtem Stuckmarmor — eine handwerkliche Königsdisziplin, die viele Malerbetriebe nicht beherrschen.",
     "image": "/assets/bilder/Saeule_Stucco.webp",
+    "imageAlt": "Säule in Stuckmarmor-Technik von Malermeister Mende",
     "primaryCtaLabel": "Kostenloses Angebot anfordern",
     "primaryCtaHref": "/#kontakt",
-    "backLabel": "Holz & Marmor"
+    "backLabel": "Holz & Marmor",
+    "breadcrumbParentLabel": "Leistungen",
+    "breadcrumbParentHref": "/#leistungen"
   },
   "intro": {
     "eyebrow": "Die Technik",
@@ -23,7 +26,19 @@
       {
         "text": "Wo echter Marmor zu schwer, zu teuer oder denkmalpflegerisch nicht möglich ist, schaffen wir die gleiche Wirkung — an Säulen, Wänden, Türen und Bauteilen."
       }
-    ]
+    ],
+    "sideCard": {
+      "heading": "Geeignet für",
+      "items": [
+        { "text": "Säulen, Pilaster & Bauteile" },
+        { "text": "repräsentative Wandflächen" },
+        { "text": "Türen & edle Holzimitate" },
+        { "text": "Denkmalpflege & Altbau" },
+        { "text": "exklusive Innenräume" }
+      ],
+      "ctaLabel": "",
+      "ctaHref": ""
+    }
   },
   "galerie": {
     "eyebrow": "Galerie",

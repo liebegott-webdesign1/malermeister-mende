@@ -9,8 +9,11 @@
     "headlineHighlight": "der Kunstmaler",
     "subline": "Steffen Mende ist Malermeister und Künstler in einem. Neben dem Handwerk entstehen in seinem Atelier Gemälde — darunter stimmungsvolle, historische Motive aus Halle (Saale) und der Region. Dieses künstlerische Auge prägt jede Arbeit, ob an der Wand oder auf der Leinwand.",
     "image": "/assets/bilder/Marktplatz_40x50.webp",
+    "imageAlt": "Gemälde Marktplatz Halle von Steffen Mende",
     "primaryCtaLabel": "Gemälde ansehen",
     "primaryCtaHref": "#galerie",
+    "secondaryCtaLabel": "Kontakt aufnehmen",
+    "secondaryCtaHref": "/#kontakt",
     "backLabel": "Der Kunstmaler"
   },
   "intro": {
@@ -23,7 +26,19 @@
       {
         "text": "Für Auftraggeber bedeutet diese Doppelbegabung: ein Meister, der nicht nur sauber arbeitet, sondern gestalten kann — mit dem Blick eines Künstlers für das richtige Detail."
       }
-    ]
+    ],
+    "sideCard": {
+      "heading": "Motive aus der Region",
+      "items": [
+        { "text": "Historischer Marktplatz Halle" },
+        { "text": "Domplatz & Eselsbrunnen" },
+        { "text": "Burg Giebichenstein" },
+        { "text": "Landsberger Doppelkapelle" },
+        { "text": "historisches Stadttheater" }
+      ],
+      "ctaLabel": "Interesse an einem Werk oder einer Auftragsarbeit? Sprechen Sie uns an →",
+      "ctaHref": "/#kontakt"
+    }
   },
   "galerie": {
     "eyebrow": "Galerie",
@@ -32,43 +47,53 @@
     "items": [
       {
         "image": "/assets/bilder/Historischer_Marktplatz_30x40.webp",
-        "alt": "Gemälde Historischer Marktplatz Halle"
+        "alt": "Gemälde Historischer Marktplatz Halle",
+        "caption": "Historischer Marktplatz"
       },
       {
         "image": "/assets/bilder/Marktplatz_40x50.webp",
-        "alt": "Gemälde Marktplatz Halle"
+        "alt": "Gemälde Marktplatz Halle",
+        "caption": "Marktplatz (40×50)"
       },
       {
         "image": "/assets/bilder/Domplatz_40X30.webp",
-        "alt": "Gemälde Domplatz Halle"
+        "alt": "Gemälde Domplatz Halle",
+        "caption": "Domplatz"
       },
       {
         "image": "/assets/bilder/Eselsbrunnen_24X30_-_Kopie.webp",
-        "alt": "Gemälde Eselsbrunnen Halle"
+        "alt": "Gemälde Eselsbrunnen Halle",
+        "caption": "Eselsbrunnen"
       },
       {
         "image": "/assets/bilder/Giebichenstein_30x40.webp",
-        "alt": "Gemälde Burg Giebichenstein"
+        "alt": "Gemälde Burg Giebichenstein",
+        "caption": "Burg Giebichenstein"
       },
       {
         "image": "/assets/bilder/Giebichenstein_30x24._-_Kopie.webp",
-        "alt": "Gemälde Giebichenstein Ansicht"
+        "alt": "Gemälde Giebichenstein Ansicht",
+        "caption": "Giebichenstein (30×24)"
       },
       {
         "image": "/assets/bilder/Landsberg_Doppelkapelle_30x24_-_Kopie.webp",
-        "alt": "Gemälde Landsberger Doppelkapelle"
+        "alt": "Gemälde Landsberger Doppelkapelle",
+        "caption": "Landsberger Doppelkapelle"
       },
       {
         "image": "/assets/bilder/historisches_Stadttheater_um_1900_30x24_-_Kopie.webp",
-        "alt": "Gemälde historisches Stadttheater um 1900"
+        "alt": "Gemälde historisches Stadttheater um 1900",
+        "caption": "Stadttheater um 1900"
       },
       {
         "image": "/assets/bilder/51F0C846CF694FEF9AB1679327C9AF82.webp",
-        "alt": "Gemälde von Steffen Mende"
+        "alt": "Gemälde von Steffen Mende",
+        "caption": "Werk aus dem Atelier"
       },
       {
         "image": "/assets/bilder/5ED495B4EA08446B9F79A197E2C15420.webp",
-        "alt": "Gemälde von Steffen Mende"
+        "alt": "Gemälde von Steffen Mende",
+        "caption": "Werk aus dem Atelier"
       }
     ]
   },

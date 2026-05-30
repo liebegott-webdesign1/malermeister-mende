@@ -11,10 +11,11 @@ export type DetailGalerieProps = Partial<DetailseiteGalerie>;
 /**
  * Galerie-Sektion der Detailseiten (Malermeister Mende).
  *
- * Markup aus 02_Website/der-kunstmaler.html / holz-und-marmor.html, an der
- * Homepage-Galerie (components/mende/Galerie.tsx) orientiert — aber OHNE
- * Filter (flache Bildliste) und mit eigenem id="galerie scroll-mt-24", da der
- * Hero-Primär-CTA dorthin verlinkt. Hintergrund bg-sand/50.
+ * Markup aus 02_Website/der-kunstmaler.html / holz-und-marmor.html: festes
+ * Raster (grid grid-cols-2 md:grid-cols-3 gap-5), je Bild eine weiße Karte mit
+ * Bild im Seitenverhältnis aspect-[4/5] object-cover und — falls vorhanden —
+ * einer Bildunterschrift (figcaption). Eigenes id="galerie" + scroll-mt-24,
+ * da der Hero-Primär-CTA dorthin verlinkt. Hintergrund bg-sand/50.
  *
  * Lightbox via useState + Body-Klasse .lb-active, schließbar über X-Button,
  * Backdrop-Klick und Escape (identisch zur Homepage-Galerie).
@@ -67,20 +68,27 @@ export const DetailGalerie: React.FC<DetailGalerieProps> = ({
           {intro && <p className="mt-4 text-lg text-stone">{intro}</p>}
         </div>
 
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 [&>*]:mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
           {visibleItems.map((item, index) => (
             <figure
               key={`${item.image ?? "img"}-${index}`}
-              className="gal-item fade-up break-inside-avoid rounded-xl overflow-hidden ring-1 ring-sand cursor-zoom-in"
+              className="gal-item fade-up rounded-xl overflow-hidden ring-1 ring-sand cursor-zoom-in bg-white"
               onClick={() => setLightbox(item)}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                loading="lazy"
-                src={item.image ?? ""}
-                alt={item.alt ?? ""}
-                className="w-full"
-              />
+              <div className="overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  loading="lazy"
+                  src={item.image ?? ""}
+                  alt={item.alt ?? ""}
+                  className="w-full aspect-[4/5] object-cover"
+                />
+              </div>
+              {item.caption && (
+                <figcaption className="p-3 text-sm text-stone">
+                  {item.caption}
+                </figcaption>
+              )}
             </figure>
           ))}
         </div>
