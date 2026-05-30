@@ -1,25 +1,16 @@
 "use client";
 import React from "react";
+import { tinaField } from "tinacms/dist/react";
+import type { HomeQuery } from "@/tina/__generated__/types";
 import { useLayout } from "../layout/layout-context";
 
-export interface FaqItem {
-  question?: string | null;
-  answer?: string | null;
-}
+type FaqData = NonNullable<HomeQuery["home"]>["faq"];
 
 export interface FaqProps {
-  eyebrow?: string | null;
-  heading?: string | null;
-  items?: Array<FaqItem | null> | null;
-  footerNote?: string | null;
+  data?: FaqData;
 }
 
-export const Faq: React.FC<FaqProps> = ({
-  eyebrow,
-  heading,
-  items,
-  footerNote,
-}) => {
+export const Faq: React.FC<FaqProps> = ({ data }) => {
   const { globalSettings } = useLayout();
   const phoneRaw = globalSettings?.contact?.phoneRaw;
 
@@ -27,24 +18,33 @@ export const Faq: React.FC<FaqProps> = ({
     <section className="py-20 lg:py-24 bg-sand/50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          {eyebrow && (
-            <p className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3">
-              {eyebrow}
+          {data?.eyebrow && (
+            <p
+              data-tina-field={tinaField(data, "eyebrow")}
+              className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3"
+            >
+              {data.eyebrow}
             </p>
           )}
-          {heading && (
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight">
-              {heading}
+          {data?.heading && (
+            <h2
+              data-tina-field={tinaField(data, "heading")}
+              className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight"
+            >
+              {data.heading}
             </h2>
           )}
         </div>
         <div className="space-y-3">
-          {items?.map((item, index) => (
+          {data?.items?.map((item, index) => (
             <details
               key={index}
               className="bg-white rounded-xl ring-1 ring-sand p-5 group"
             >
-              <summary className="flex items-center justify-between font-semibold text-ink text-lg">
+              <summary
+                data-tina-field={tinaField(item, "question")}
+                className="flex items-center justify-between font-semibold text-ink text-lg"
+              >
                 {item?.question}
                 <svg
                   className="faq-icon w-5 h-5 text-bordeaux transition-transform"
@@ -54,21 +54,29 @@ export const Faq: React.FC<FaqProps> = ({
                   <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                 </svg>
               </summary>
-              <p className="mt-3 text-stone leading-relaxed">{item?.answer}</p>
+              <p
+                data-tina-field={tinaField(item, "answer")}
+                className="mt-3 text-stone leading-relaxed"
+              >
+                {item?.answer}
+              </p>
             </details>
           ))}
         </div>
-        {footerNote && (
-          <p className="text-center mt-8 text-stone">
+        {data?.footerNote && (
+          <p
+            data-tina-field={tinaField(data, "footerNote")}
+            className="text-center mt-8 text-stone"
+          >
             {phoneRaw ? (
               <a
                 href={`tel:${phoneRaw}`}
                 className="text-bordeaux font-semibold"
               >
-                {footerNote}
+                {data.footerNote}
               </a>
             ) : (
-              footerNote
+              data.footerNote
             )}
           </p>
         )}

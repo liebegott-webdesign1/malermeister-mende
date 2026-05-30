@@ -28,8 +28,13 @@ export interface DetailClientPageProps {
  *
  * Header/Footer/Theme kommen aus dem Layout (components/layout/layout.tsx).
  *
- * `useTina` macht `data.detailseite` live-editierbar; alle Felder sind im
- * Schema optional (Maybe<...>) und werden in den Sektionen defensiv behandelt.
+ * VISUAL EDITING / CLICK-TO-EDIT (verbindlich):
+ * `useTina` macht `data.detailseite` live-editierbar. Jede Sektion bekommt
+ * ihren Teilbaum als zusammenhängende `data`-Prop (z. B. <DetailHero data={d?.hero} />),
+ * NICHT gespreadet. Nur so bleiben die `_content_source`-Metadaten erhalten,
+ * die `tinaField(data, "feld")` in den Sektionen für Click-to-Edit braucht.
+ * Ein Spread (`{...obj}`) würde sie verlieren. Daher hier KEIN `?? {}`-Fallback
+ * mehr — das defensive Lesen passiert in der Komponente über `data?.feld`.
  *
  * FadeInit ist eingebunden, weil DetailIntro/DetailGalerie/DetailAblauf
  * `.fade-up` nutzen (sonst blieben Elemente unsichtbar). DetailAblauf rendert
@@ -41,11 +46,11 @@ export default function DetailClientPage(props: DetailClientPageProps) {
 
   return (
     <>
-      <DetailHero {...(d?.hero ?? {})} />
-      <DetailIntro {...(d?.intro ?? {})} />
-      <DetailGalerie {...(d?.galerie ?? {})} />
-      <DetailAblauf {...(d?.ablauf ?? {})} />
-      <DetailCta {...(d?.cta ?? {})} />
+      <DetailHero data={d?.hero} />
+      <DetailIntro data={d?.intro} />
+      <DetailGalerie data={d?.galerie} />
+      <DetailAblauf data={d?.ablauf} />
+      <DetailCta data={d?.cta} />
       <FadeInit />
     </>
   );

@@ -1,12 +1,17 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import type {
-  DetailseiteGalerie,
-  DetailseiteGalerieItems,
-} from "@/tina/__generated__/types";
+import { tinaField } from "tinacms/dist/react";
+import type { DetailseiteQuery } from "@/tina/__generated__/types";
 
-export type DetailGalerieProps = Partial<DetailseiteGalerie>;
+type DetailGalerieData = NonNullable<DetailseiteQuery["detailseite"]>["galerie"];
+type DetailGalerieItem = NonNullable<
+  NonNullable<DetailGalerieData>["items"]
+>[number];
+
+export interface DetailGalerieProps {
+  data?: DetailGalerieData;
+}
 
 /**
  * Galerie-Sektion der Detailseiten (Malermeister Mende).
@@ -20,13 +25,8 @@ export type DetailGalerieProps = Partial<DetailseiteGalerie>;
  * Lightbox via useState + Body-Klasse .lb-active, schließbar über X-Button,
  * Backdrop-Klick und Escape (identisch zur Homepage-Galerie).
  */
-export const DetailGalerie: React.FC<DetailGalerieProps> = ({
-  eyebrow,
-  heading,
-  intro,
-  items,
-}) => {
-  const [lightbox, setLightbox] = useState<DetailseiteGalerieItems | null>(
+export const DetailGalerie: React.FC<DetailGalerieProps> = ({ data }) => {
+  const [lightbox, setLightbox] = useState<NonNullable<DetailGalerieItem> | null>(
     null,
   );
 
@@ -44,8 +44,8 @@ export const DetailGalerie: React.FC<DetailGalerieProps> = ({
     };
   }, [lightbox]);
 
-  const visibleItems = (items ?? []).filter(
-    (item): item is DetailseiteGalerieItems => !!item && !!item.image,
+  const visibleItems = (data?.items ?? []).filter(
+    (item): item is NonNullable<DetailGalerieItem> => !!item && !!item.image,
   );
 
   return (
@@ -55,17 +55,30 @@ export const DetailGalerie: React.FC<DetailGalerieProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-10">
-          {eyebrow && (
-            <p className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3">
-              {eyebrow}
+          {data?.eyebrow && (
+            <p
+              data-tina-field={tinaField(data, "eyebrow")}
+              className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3"
+            >
+              {data.eyebrow}
             </p>
           )}
-          {heading && (
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight">
-              {heading}
+          {data?.heading && (
+            <h2
+              data-tina-field={tinaField(data, "heading")}
+              className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight"
+            >
+              {data.heading}
             </h2>
           )}
-          {intro && <p className="mt-4 text-lg text-stone">{intro}</p>}
+          {data?.intro && (
+            <p
+              data-tina-field={tinaField(data, "intro")}
+              className="mt-4 text-lg text-stone"
+            >
+              {data.intro}
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
@@ -78,6 +91,7 @@ export const DetailGalerie: React.FC<DetailGalerieProps> = ({
               <div className="overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  data-tina-field={tinaField(item, "image")}
                   loading="lazy"
                   src={item.image ?? ""}
                   alt={item.alt ?? ""}
@@ -85,7 +99,10 @@ export const DetailGalerie: React.FC<DetailGalerieProps> = ({
                 />
               </div>
               {item.caption && (
-                <figcaption className="p-3 text-sm text-stone">
+                <figcaption
+                  data-tina-field={tinaField(item, "caption")}
+                  className="p-3 text-sm text-stone"
+                >
                   {item.caption}
                 </figcaption>
               )}
@@ -124,6 +141,7 @@ export const DetailGalerie: React.FC<DetailGalerieProps> = ({
           {lightbox.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
+              data-tina-field={tinaField(lightbox, "image")}
               src={lightbox.image}
               alt={lightbox.alt ?? ""}
               className="max-w-full max-h-[88vh] w-auto h-auto rounded-lg shadow-2xl"

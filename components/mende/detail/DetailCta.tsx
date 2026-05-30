@@ -1,10 +1,15 @@
 "use client";
 
 import React from "react";
+import { tinaField } from "tinacms/dist/react";
 import { useLayout } from "../../layout/layout-context";
-import type { DetailseiteCta } from "@/tina/__generated__/types";
+import type { DetailseiteQuery } from "@/tina/__generated__/types";
 
-export type DetailCtaProps = Partial<DetailseiteCta>;
+type DetailCtaData = NonNullable<DetailseiteQuery["detailseite"]>["cta"];
+
+export interface DetailCtaProps {
+  data?: DetailCtaData;
+}
 
 /**
  * Abschluss-CTA der Detailseiten (Malermeister Mende).
@@ -14,12 +19,7 @@ export type DetailCtaProps = Partial<DetailseiteCta>;
  * Primär-CTA als Theme-Button (text-bordeaux-foreground, hover:bg-bordeaux-light),
  * Telefon-Sekundär-CTA fest aus useLayout(). Interner Link als Route ("/#kontakt").
  */
-export const DetailCta: React.FC<DetailCtaProps> = ({
-  heading,
-  text,
-  primaryLabel,
-  primaryHref,
-}) => {
+export const DetailCta: React.FC<DetailCtaProps> = ({ data }) => {
   const { globalSettings } = useLayout();
   const contact = globalSettings?.contact;
   const phoneRaw = contact?.phoneRaw ?? "";
@@ -28,19 +28,30 @@ export const DetailCta: React.FC<DetailCtaProps> = ({
   return (
     <section className="py-16 lg:py-20 bg-ink text-cream">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {heading && (
-          <h2 className="font-serif text-3xl lg:text-4xl font-bold text-white leading-tight">
-            {heading}
+        {data?.heading && (
+          <h2
+            data-tina-field={tinaField(data, "heading")}
+            className="font-serif text-3xl lg:text-4xl font-bold text-white leading-tight"
+          >
+            {data.heading}
           </h2>
         )}
-        {text && <p className="mt-4 text-lg text-cream/75">{text}</p>}
+        {data?.text && (
+          <p
+            data-tina-field={tinaField(data, "text")}
+            className="mt-4 text-lg text-cream/75"
+          >
+            {data.text}
+          </p>
+        )}
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          {primaryLabel && (
+          {data?.primaryLabel && (
             <a
-              href={primaryHref ?? "/#kontakt"}
+              href={data?.primaryHref ?? "/#kontakt"}
+              data-tina-field={tinaField(data, "primaryLabel")}
               className="bg-bordeaux hover:bg-bordeaux-light text-bordeaux-foreground px-7 py-4 rounded-xl font-semibold transition shadow"
             >
-              {primaryLabel}
+              {data.primaryLabel}
             </a>
           )}
           {phoneRaw && (

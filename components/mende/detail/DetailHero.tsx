@@ -1,10 +1,15 @@
 "use client";
 
 import React from "react";
+import { tinaField } from "tinacms/dist/react";
 import { useLayout } from "../../layout/layout-context";
-import type { DetailseiteHero } from "@/tina/__generated__/types";
+import type { DetailseiteQuery } from "@/tina/__generated__/types";
 
-export type DetailHeroProps = Partial<DetailseiteHero>;
+type DetailHeroData = NonNullable<DetailseiteQuery["detailseite"]>["hero"];
+
+export interface DetailHeroProps {
+  data?: DetailHeroData;
+}
 
 /**
  * Hero-Sektion der Detailseiten (Malermeister Mende).
@@ -17,22 +22,11 @@ export type DetailHeroProps = Partial<DetailseiteHero>;
  * Schriftgewichte als Tokens (font-700 → font-bold, font-600 → font-semibold),
  * Markenfarbe über Tokens, Text auf der Primärfläche = text-bordeaux-foreground.
  * Interne Links als Next.js-Routen ("/"), nicht als .html.
+ *
+ * Visual Editing: Erhält genau eine Prop "data" (Teilbaum aus useTina) und
+ * verdrahtet jedes editierbare Feld per data-tina-field={tinaField(data, ...)}.
  */
-export const DetailHero: React.FC<DetailHeroProps> = ({
-  badge,
-  headlineLead,
-  headlineHighlight,
-  subline,
-  image,
-  imageAlt,
-  primaryCtaLabel,
-  primaryCtaHref,
-  secondaryCtaLabel,
-  secondaryCtaHref,
-  backLabel,
-  breadcrumbParentLabel,
-  breadcrumbParentHref,
-}) => {
+export const DetailHero: React.FC<DetailHeroProps> = ({ data }) => {
   const { globalSettings } = useLayout();
   const contact = globalSettings?.contact;
   const phoneRaw = contact?.phoneRaw ?? "";
@@ -48,54 +42,77 @@ export const DetailHero: React.FC<DetailHeroProps> = ({
                 Start
               </a>{" "}
               <span className="mx-1">›</span>{" "}
-              {breadcrumbParentLabel && (
+              {data?.breadcrumbParentLabel && (
                 <>
                   <a
-                    href={breadcrumbParentHref ?? "/"}
+                    href={data?.breadcrumbParentHref ?? "/"}
                     className="hover:text-bordeaux"
+                    data-tina-field={tinaField(data, "breadcrumbParentLabel")}
                   >
-                    {breadcrumbParentLabel}
+                    {data.breadcrumbParentLabel}
                   </a>{" "}
                   <span className="mx-1">›</span>{" "}
                 </>
               )}
-              {backLabel && <span className="text-ink">{backLabel}</span>}
+              {data?.backLabel && (
+                <span
+                  className="text-ink"
+                  data-tina-field={tinaField(data, "backLabel")}
+                >
+                  {data.backLabel}
+                </span>
+              )}
             </nav>
 
-            {badge && (
-              <p className="inline-flex items-center gap-2 text-bordeaux font-semibold text-sm uppercase tracking-[0.18em] mb-5">
-                <span className="h-px w-8 bg-bordeaux"></span> {badge}
+            {data?.badge && (
+              <p
+                className="inline-flex items-center gap-2 text-bordeaux font-semibold text-sm uppercase tracking-[0.18em] mb-5"
+                data-tina-field={tinaField(data, "badge")}
+              >
+                <span className="h-px w-8 bg-bordeaux"></span> {data.badge}
               </p>
             )}
 
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] font-bold leading-[1.05] text-ink">
-              {headlineLead}{" "}
-              {headlineHighlight && (
-                <span className="text-bordeaux">{headlineHighlight}</span>
+              <span data-tina-field={tinaField(data, "headlineLead")}>
+                {data?.headlineLead}
+              </span>{" "}
+              {data?.headlineHighlight && (
+                <span
+                  className="text-bordeaux"
+                  data-tina-field={tinaField(data, "headlineHighlight")}
+                >
+                  {data.headlineHighlight}
+                </span>
               )}
             </h1>
 
-            {subline && (
-              <p className="mt-6 text-lg text-stone leading-relaxed">
-                {subline}
+            {data?.subline && (
+              <p
+                className="mt-6 text-lg text-stone leading-relaxed"
+                data-tina-field={tinaField(data, "subline")}
+              >
+                {data.subline}
               </p>
             )}
 
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
-              {primaryCtaLabel && (
+              {data?.primaryCtaLabel && (
                 <a
-                  href={primaryCtaHref ?? "/#kontakt"}
+                  href={data?.primaryCtaHref ?? "/#kontakt"}
                   className="bg-bordeaux hover:bg-bordeaux-dark text-bordeaux-foreground text-center px-7 py-4 rounded-xl font-semibold shadow-md transition"
+                  data-tina-field={tinaField(data, "primaryCtaLabel")}
                 >
-                  {primaryCtaLabel}
+                  {data.primaryCtaLabel}
                 </a>
               )}
-              {secondaryCtaLabel ? (
+              {data?.secondaryCtaLabel ? (
                 <a
-                  href={secondaryCtaHref ?? "/#kontakt"}
+                  href={data?.secondaryCtaHref ?? "/#kontakt"}
                   className="flex items-center justify-center gap-2 border-2 border-bordeaux/30 hover:border-bordeaux text-ink px-7 py-4 rounded-xl font-semibold transition"
+                  data-tina-field={tinaField(data, "secondaryCtaLabel")}
                 >
-                  {secondaryCtaLabel}
+                  {data.secondaryCtaLabel}
                 </a>
               ) : (
                 phoneRaw && (
@@ -119,18 +136,19 @@ export const DetailHero: React.FC<DetailHeroProps> = ({
         </div>
 
         <div className="relative order-1 lg:order-2 min-h-[280px] lg:min-h-[560px]">
-          {image && (
+          {data?.image && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={image}
+              src={data.image}
               alt={
-                imageAlt ||
-                (headlineHighlight
-                  ? `${headlineHighlight} — Malermeister Mende`
+                data?.imageAlt ||
+                (data?.headlineHighlight
+                  ? `${data.headlineHighlight} — Malermeister Mende`
                   : "Arbeit von Malermeister Mende")
               }
               className="absolute inset-0 w-full h-full object-cover"
               fetchPriority="high"
+              data-tina-field={tinaField(data, "image")}
             />
           )}
         </div>

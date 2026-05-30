@@ -1,14 +1,16 @@
 "use client";
 import React, { useState } from "react";
+import { tinaField } from "tinacms/dist/react";
+import type { HomeQuery } from "@/tina/__generated__/types";
 import { useLayout } from "../layout/layout-context";
 
+type KontaktData = NonNullable<HomeQuery["home"]>["kontakt"];
+
 export interface KontaktProps {
-  eyebrow?: string | null;
-  heading?: string | null;
-  intro?: string | null;
+  data?: KontaktData;
 }
 
-export const Kontakt: React.FC<KontaktProps> = ({ eyebrow, heading, intro }) => {
+export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
   const { globalSettings } = useLayout();
   const contact = globalSettings?.contact;
   const [sent, setSent] = useState(false);
@@ -24,18 +26,29 @@ export const Kontakt: React.FC<KontaktProps> = ({ eyebrow, heading, intro }) => 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Linke Spalte: Kontaktdaten */}
           <div>
-            {eyebrow && (
-              <p className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3">
-                {eyebrow}
+            {data?.eyebrow && (
+              <p
+                data-tina-field={tinaField(data, "eyebrow")}
+                className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3"
+              >
+                {data.eyebrow}
               </p>
             )}
-            {heading && (
-              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight">
-                {heading}
+            {data?.heading && (
+              <h2
+                data-tina-field={tinaField(data, "heading")}
+                className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight"
+              >
+                {data.heading}
               </h2>
             )}
-            {intro && (
-              <p className="mt-5 text-lg text-stone leading-relaxed">{intro}</p>
+            {data?.intro && (
+              <p
+                data-tina-field={tinaField(data, "intro")}
+                className="mt-5 text-lg text-stone leading-relaxed"
+              >
+                {data.intro}
+              </p>
             )}
 
             {contact?.phoneRaw && (

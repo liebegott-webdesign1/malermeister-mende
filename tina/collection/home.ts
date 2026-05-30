@@ -7,6 +7,11 @@ const Home: Collection = {
   format: "json",
   ui: {
     global: true,
+    // Visual Editing: Die Startseite liegt unter content/home/index.json und
+    // wird von Next.js unter "/" gerendert (app/page.tsx). Der Router gibt
+    // diesen Live-Pfad zurück, damit der Tina-Editor die Klick-zum-Bearbeiten-
+    // Vorschau aktiviert. Rückgabe eines Strings => Visual Editing aktiv.
+    router: () => "/",
   },
   fields: [
     // ============ SEO ============

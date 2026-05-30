@@ -1,27 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { tinaField } from "tinacms/dist/react";
+import type { HomeQuery } from "@/tina/__generated__/types";
 
-export interface GalerieFilter {
-  key?: string | null;
-  label?: string | null;
-}
+type GalerieData = NonNullable<HomeQuery["home"]>["galerie"];
 
-export interface GalerieItem {
-  image?: string | null;
-  alt?: string | null;
-  category?: string | null;
-}
+// Einzelnes Galerie-Item aus dem generierten Tina-Typ (traegt _content_source-Metadaten).
+type GalerieItem = NonNullable<NonNullable<GalerieData>["items"]>[number];
 
 export interface GalerieProps {
-  eyebrow?: string | null;
-  heading?: string | null;
-  intro?: string | null;
-  filters?: Array<GalerieFilter | null> | null;
-  items?: Array<GalerieItem | null> | null;
+  data?: GalerieData;
 }
 
-export function Galerie({ eyebrow, heading, intro, filters, items }: GalerieProps) {
+export function Galerie({ data }: GalerieProps) {
   const [activeKey, setActiveKey] = useState("all");
   const [lightbox, setLightbox] = useState<GalerieItem | null>(null);
 
@@ -39,7 +31,7 @@ export function Galerie({ eyebrow, heading, intro, filters, items }: GalerieProp
     };
   }, [lightbox]);
 
-  const visibleItems = (items ?? []).filter(
+  const visibleItems = (data?.items ?? []).filter(
     (item): item is GalerieItem =>
       !!item && (activeKey === "all" || item.category === activeKey),
   );
@@ -48,21 +40,31 @@ export function Galerie({ eyebrow, heading, intro, filters, items }: GalerieProp
     <section id="galerie" className="py-20 lg:py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-10">
-          {eyebrow ? (
-            <p className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3">
-              {eyebrow}
+          {data?.eyebrow ? (
+            <p
+              data-tina-field={tinaField(data, "eyebrow")}
+              className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3"
+            >
+              {data.eyebrow}
             </p>
           ) : null}
-          {heading ? (
-            <h2 className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight">
-              {heading}
+          {data?.heading ? (
+            <h2
+              data-tina-field={tinaField(data, "heading")}
+              className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight"
+            >
+              {data.heading}
             </h2>
           ) : null}
-          {intro ? <p className="mt-4 text-lg text-stone">{intro}</p> : null}
+          {data?.intro ? (
+            <p data-tina-field={tinaField(data, "intro")} className="mt-4 text-lg text-stone">
+              {data.intro}
+            </p>
+          ) : null}
         </div>
 
         <div className="flex flex-wrap gap-2 mb-8">
-          {filters?.map((filter, i) => {
+          {data?.filters?.map((filter, i) => {
             if (!filter) return null;
             const key = filter.key ?? "all";
             const isActive = key === activeKey;
@@ -71,6 +73,7 @@ export function Galerie({ eyebrow, heading, intro, filters, items }: GalerieProp
                 key={`${key}-${i}`}
                 type="button"
                 onClick={() => setActiveKey(key)}
+                data-tina-field={tinaField(filter, "label")}
                 className={`px-4 py-2 rounded-full text-sm font-semibold border border-bordeaux/20 transition ${
                   isActive
                     ? "bg-bordeaux text-bordeaux-foreground"
@@ -86,16 +89,18 @@ export function Galerie({ eyebrow, heading, intro, filters, items }: GalerieProp
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 [&>*]:mb-4">
           {visibleItems.map((item, i) => (
             <figure
-              key={`${item.image ?? "img"}-${i}`}
+              key={`${item?.image ?? "img"}-${i}`}
+              data-tina-field={item ? tinaField(item) : undefined}
               className="gal-item break-inside-avoid rounded-xl overflow-hidden ring-1 ring-sand cursor-zoom-in"
-              data-cat={item.category ?? ""}
+              data-cat={item?.category ?? ""}
               onClick={() => setLightbox(item)}
             >
-              {item.image ? (
+              {item?.image ? (
                 <img
                   loading="lazy"
                   src={item.image}
                   alt={item.alt ?? ""}
+                  data-tina-field={tinaField(item, "image")}
                   className="w-full"
                 />
               ) : null}
@@ -146,6 +151,7 @@ export function Galerie({ eyebrow, heading, intro, filters, items }: GalerieProp
             <img
               src={lightbox.image}
               alt={lightbox.alt ?? ""}
+              data-tina-field={tinaField(lightbox, "image")}
               className="max-w-full max-h-[88vh] w-auto h-auto rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />

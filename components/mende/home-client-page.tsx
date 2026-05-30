@@ -34,10 +34,22 @@ export interface HomeClientPageProps {
  *
  * Header/Footer kommen aus dem Layout (components/layout/*).
  *
- * Alle Sektions-Felder im Schema sind optional (Maybe<...>); die Slices
- * werden defensiv via `?? {}` bzw. `?? []` gespreadet, damit der Build
- * auch bei fehlenden Sektionen typsicher und ohne Laufzeitfehler bleibt.
- * Die einzelnen Komponenten behandeln ihre Felder intern ebenfalls defensiv.
+ * VISUAL EDITING / CLICK-TO-EDIT (verbindlich):
+ * Jede Sektion bekommt ihr Daten-Objekt als zusammenhängende `data`-Prop
+ * übergeben (z. B. <Hero data={h?.hero} />), NICHT gespreadet. Nur so bleiben
+ * die nicht-enumerierbaren `_content_source`-Metadaten erhalten, die useTina an
+ * `data` hängt — und nur damit findet `tinaField(data, "feld")` in den
+ * Sektionen den richtigen Pfad zur Sidebar. Ein Spread (`{...obj}`) würde diese
+ * Metadaten verlieren und Click-to-Edit tot machen.
+ *
+ * Alle Sektions-Felder im Schema sind optional (Maybe<...>); die Komponenten
+ * müssen `data === undefined` defensiv verkraften (siehe Contract). Daher hier
+ * KEIN `?? {}`-Fallback mehr — das defensive Lesen passiert in der Komponente
+ * über `data?.feld`.
+ *
+ * Sonderfall TrustBar: `trustBar` ist im Schema selbst eine Liste (kein Objekt
+ * mit items-Feld). Die Komponente erhält die Liste daher direkt als `data` und
+ * setzt tinaField pro Item via `tinaField(item)`.
  */
 export default function HomeClientPage(props: HomeClientPageProps) {
   const { data } = useTina({ ...props });
@@ -45,17 +57,17 @@ export default function HomeClientPage(props: HomeClientPageProps) {
 
   return (
     <>
-      <Hero {...(h?.hero ?? {})} />
-      <TrustBar items={h?.trustBar ?? []} />
-      <Nutzen {...(h?.nutzen ?? {})} />
-      <Leistungen {...(h?.leistungen ?? {})} />
-      <Galerie {...(h?.galerie ?? {})} />
-      <Einwand {...(h?.einwand ?? {})} />
-      <Ablauf {...(h?.ablauf ?? {})} />
-      <Bewertungen {...(h?.bewertungen ?? {})} />
-      <UeberUns {...(h?.ueberUns ?? {})} />
-      <Faq {...(h?.faq ?? {})} />
-      <Kontakt {...(h?.kontakt ?? {})} />
+      <Hero data={h?.hero} />
+      <TrustBar data={h?.trustBar} />
+      <Nutzen data={h?.nutzen} />
+      <Leistungen data={h?.leistungen} />
+      <Galerie data={h?.galerie} />
+      <Einwand data={h?.einwand} />
+      <Ablauf data={h?.ablauf} />
+      <Bewertungen data={h?.bewertungen} />
+      <UeberUns data={h?.ueberUns} />
+      <Faq data={h?.faq} />
+      <Kontakt data={h?.kontakt} />
       <FadeInit />
     </>
   );

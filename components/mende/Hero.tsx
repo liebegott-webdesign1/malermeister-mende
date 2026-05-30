@@ -1,16 +1,14 @@
 "use client";
 
 import React from "react";
+import { tinaField } from "tinacms/dist/react";
+import type { HomeQuery } from "@/tina/__generated__/types";
 import { useLayout } from "../layout/layout-context";
 
+type HeroData = NonNullable<HomeQuery["home"]>["hero"];
+
 export interface HeroProps {
-  badge?: string | null;
-  headlineLead?: string | null;
-  headlineHighlight?: string | null;
-  subline?: string | null;
-  primaryCtaLabel?: string | null;
-  trustNote?: string | null;
-  image?: string | null;
+  data?: HeroData;
 }
 
 /**
@@ -22,15 +20,7 @@ export interface HeroProps {
  * (font-700 -> font-bold, font-600 -> font-semibold).
  * Telefon-Sekundaer-CTA kommt aus dem globalen Kontakt (useLayout()).
  */
-export const Hero: React.FC<HeroProps> = ({
-  badge,
-  headlineLead,
-  headlineHighlight,
-  subline,
-  primaryCtaLabel,
-  trustNote,
-  image,
-}) => {
+export const Hero: React.FC<HeroProps> = ({ data }) => {
   const { globalSettings } = useLayout();
   const contact = globalSettings?.contact;
   const phoneRaw = contact?.phoneRaw ?? "";
@@ -41,28 +31,42 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="grid lg:grid-cols-2">
         <div className="flex items-center px-6 sm:px-10 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-12 py-16 lg:py-24 order-2 lg:order-1">
           <div className="max-w-xl">
-            {badge && (
-              <p className="inline-flex items-center gap-2 text-bordeaux font-semibold text-sm uppercase tracking-[0.18em] mb-5">
-                <span className="h-px w-8 bg-bordeaux"></span> {badge}
+            {data?.badge && (
+              <p
+                data-tina-field={tinaField(data, "badge")}
+                className="inline-flex items-center gap-2 text-bordeaux font-semibold text-sm uppercase tracking-[0.18em] mb-5"
+              >
+                <span className="h-px w-8 bg-bordeaux"></span> {data.badge}
               </p>
             )}
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] text-ink">
-              {headlineLead}{" "}
-              {headlineHighlight && (
-                <span className="text-bordeaux">{headlineHighlight}</span>
+              <span data-tina-field={tinaField(data, "headlineLead")}>
+                {data?.headlineLead}
+              </span>{" "}
+              {data?.headlineHighlight && (
+                <span
+                  data-tina-field={tinaField(data, "headlineHighlight")}
+                  className="text-bordeaux"
+                >
+                  {data.headlineHighlight}
+                </span>
               )}
             </h1>
-            {subline && (
-              <p className="mt-6 text-lg text-stone leading-relaxed">
-                {subline}
+            {data?.subline && (
+              <p
+                data-tina-field={tinaField(data, "subline")}
+                className="mt-6 text-lg text-stone leading-relaxed"
+              >
+                {data.subline}
               </p>
             )}
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <a
                 href="#kontakt"
+                data-tina-field={tinaField(data, "primaryCtaLabel")}
                 className="bg-bordeaux hover:bg-bordeaux-dark text-bordeaux-foreground text-center px-7 py-4 rounded-xl font-semibold shadow-md transition"
               >
-                {primaryCtaLabel ?? "Kostenloses Angebot anfordern"}
+                {data?.primaryCtaLabel ?? "Kostenloses Angebot anfordern"}
               </a>
               {phoneRaw && (
                 <a
@@ -80,19 +84,25 @@ export const Hero: React.FC<HeroProps> = ({
                 </a>
               )}
             </div>
-            {trustNote && (
-              <p className="mt-4 text-sm text-stone">{trustNote}</p>
+            {data?.trustNote && (
+              <p
+                data-tina-field={tinaField(data, "trustNote")}
+                className="mt-4 text-sm text-stone"
+              >
+                {data.trustNote}
+              </p>
             )}
           </div>
         </div>
         <div className="relative order-1 lg:order-2 min-h-[300px] lg:min-h-[640px]">
-          {image && (
+          {data?.image && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={image}
+              data-tina-field={tinaField(data, "image")}
+              src={data.image}
               alt={
-                headlineHighlight
-                  ? `Arbeit von Malermeister Mende in ${headlineHighlight}`
+                data?.headlineHighlight
+                  ? `Arbeit von Malermeister Mende in ${data.headlineHighlight}`
                   : "Arbeit von Malermeister Mende"
               }
               className="absolute inset-0 w-full h-full object-cover"

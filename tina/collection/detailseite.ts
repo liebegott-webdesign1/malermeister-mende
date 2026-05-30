@@ -28,6 +28,13 @@ const Detailseite: Collection = {
       create: false,
       delete: false,
     },
+    // Visual Editing: Jede Detailseite liegt unter content/detailseite/<slug>.json
+    // und wird von Next.js unter "/<slug>" gerendert. Der Dateiname OHNE Endung
+    // (_sys.filename) ist exakt der Slug — z. B. "der-kunstmaler" => /der-kunstmaler
+    // (app/der-kunstmaler/page.tsx), "holz-und-marmor" => /holz-und-marmor
+    // (app/holz-und-marmor/page.tsx). Der zurückgegebene Pfad muss mit der
+    // statisch generierten Next-Route übereinstimmen.
+    router: ({ document }) => `/${document._sys.filename}`,
   },
   fields: [
     // ============ SEO ============

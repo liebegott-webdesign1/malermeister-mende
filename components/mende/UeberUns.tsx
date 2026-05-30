@@ -1,44 +1,39 @@
 import React from "react";
+import { tinaField } from "tinacms/dist/react";
+import type { HomeQuery } from "@/tina/__generated__/types";
 
-export interface UeberUnsParagraph {
-  text?: string | null;
-}
+type UeberUnsData = NonNullable<HomeQuery["home"]>["ueberUns"];
 
 export interface UeberUnsProps {
-  eyebrow?: string | null;
-  heading?: string | null;
-  paragraphs?: Array<UeberUnsParagraph | null> | null;
-  image?: string | null;
-  imageNote?: string | null;
-  ctaLabel?: string | null;
+  data?: UeberUnsData;
 }
 
-export const UeberUns: React.FC<UeberUnsProps> = ({
-  eyebrow,
-  heading,
-  paragraphs,
-  image,
-  imageNote,
-  ctaLabel,
-}) => {
+export const UeberUns: React.FC<UeberUnsProps> = ({ data }) => {
   return (
     <section id="ueber-uns" className="py-20 lg:py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
-            {eyebrow && (
-              <p className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3">
-                {eyebrow}
+            {data?.eyebrow && (
+              <p
+                data-tina-field={tinaField(data, "eyebrow")}
+                className="text-bordeaux font-semibold uppercase tracking-[0.18em] text-sm mb-3"
+              >
+                {data.eyebrow}
               </p>
             )}
-            {heading && (
-              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight">
-                {heading}
+            {data?.heading && (
+              <h2
+                data-tina-field={tinaField(data, "heading")}
+                className="font-serif text-3xl lg:text-4xl font-bold text-ink leading-tight"
+              >
+                {data.heading}
               </h2>
             )}
-            {paragraphs?.map((paragraph, index) => (
+            {data?.paragraphs?.map((paragraph, index) => (
               <p
                 key={index}
+                data-tina-field={tinaField(paragraph, "text")}
                 className={
                   index === 0
                     ? "mt-5 text-lg text-stone leading-relaxed"
@@ -48,27 +43,32 @@ export const UeberUns: React.FC<UeberUnsProps> = ({
                 {paragraph?.text}
               </p>
             ))}
-            {ctaLabel && (
+            {data?.ctaLabel && (
               <a
                 href="/der-kunstmaler"
+                data-tina-field={tinaField(data, "ctaLabel")}
                 className="inline-flex items-center gap-2 mt-7 text-bordeaux font-semibold hover:gap-3 transition-all"
               >
-                {ctaLabel}
+                {data.ctaLabel}
               </a>
             )}
           </div>
           <div className="order-1 lg:order-2">
             <div className="relative rounded-2xl overflow-hidden ring-1 ring-sand bg-sand">
-              {image && (
+              {data?.image && (
                 <img
-                  src={image}
-                  alt={heading ?? "Über uns"}
+                  data-tina-field={tinaField(data, "image")}
+                  src={data.image}
+                  alt={data?.heading ?? "Über uns"}
                   className="w-full aspect-[4/3] object-cover"
                 />
               )}
-              {imageNote && (
-                <span className="absolute bottom-3 left-3 bg-white/90 text-stone text-xs px-3 py-1.5 rounded-full">
-                  {imageNote}
+              {data?.imageNote && (
+                <span
+                  data-tina-field={tinaField(data, "imageNote")}
+                  className="absolute bottom-3 left-3 bg-white/90 text-stone text-xs px-3 py-1.5 rounded-full"
+                >
+                  {data.imageNote}
                 </span>
               )}
             </div>
