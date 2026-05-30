@@ -45,7 +45,7 @@ export const UeberUns: React.FC<UeberUnsProps> = ({ data }) => {
             ))}
             {data?.ctaLabel && (
               <a
-                href="/der-kunstmaler"
+                href={data?.ctaHref ?? "/der-kunstmaler"}
                 data-tina-field={tinaField(data, "ctaLabel")}
                 className="inline-flex items-center gap-2 mt-7 text-bordeaux font-semibold hover:gap-3 transition-all"
               >

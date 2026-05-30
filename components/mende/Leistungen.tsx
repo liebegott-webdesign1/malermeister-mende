@@ -85,10 +85,11 @@ export function Leistungen({ data }: LeistungenProps) {
 
         <div className="mt-10">
           <a
-            href="/der-kunstmaler"
+            href={data?.kunstmalerCtaHref ?? "/der-kunstmaler"}
+            data-tina-field={tinaField(data, "kunstmalerCtaLabel")}
             className="inline-flex items-center gap-2 text-bordeaux font-semibold hover:gap-3 transition-all"
           >
-            Steffen Mende als Kunstmaler kennenlernen →
+            {data?.kunstmalerCtaLabel ?? "Steffen Mende als Kunstmaler kennenlernen"} →
           </a>
         </div>
       </div>

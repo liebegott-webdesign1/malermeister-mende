@@ -18,6 +18,8 @@ export const StickyBar: React.FC = () => {
   const { globalSettings } = useLayout();
   const contact = globalSettings?.contact;
   const phoneRaw = contact?.phoneRaw ?? "";
+  const ctaLabel = globalSettings?.ctaLabel ?? "Angebot anfordern";
+  const ctaHref = globalSettings?.ctaHref ?? "/#kontakt";
 
   return (
     <div className="lg:hidden fixed bottom-0 inset-x-0 z-30 grid grid-cols-2 gap-px bg-sand border-t border-sand shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
@@ -35,10 +37,10 @@ export const StickyBar: React.FC = () => {
         Anrufen
       </a>
       <a
-        href="/#kontakt"
+        href={ctaHref}
         className="flex items-center justify-center gap-2 bg-bordeaux text-bordeaux-foreground font-semibold py-3.5"
       >
-        Angebot anfordern
+        {ctaLabel}
       </a>
     </div>
   );

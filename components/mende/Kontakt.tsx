@@ -54,6 +54,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
             {contact?.phoneRaw && (
               <a
                 href={`tel:${contact.phoneRaw}`}
+                data-tina-field={contact ? tinaField(contact, "phoneDisplay") : undefined}
                 className="inline-flex items-center gap-3 mt-6 text-2xl font-serif font-semibold text-bordeaux hover:text-bordeaux-dark transition"
               >
                 <svg
@@ -67,12 +68,20 @@ export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
               </a>
             )}
             {contact?.mobile && (
-              <p className="mt-2 text-sm text-stone">Mobil: {contact.mobile}</p>
+              <p
+                data-tina-field={contact ? tinaField(contact, "mobile") : undefined}
+                className="mt-2 text-sm text-stone"
+              >
+                Mobil: {contact.mobile}
+              </p>
             )}
 
             <div className="mt-8 space-y-3 text-stone">
               {(contact?.addressStreet || contact?.addressCity) && (
-                <p className="flex items-start gap-3">
+                <p
+                  data-tina-field={contact ? tinaField(contact, "addressStreet") : undefined}
+                  className="flex items-start gap-3"
+                >
                   <svg
                     className="w-5 h-5 text-bordeaux mt-0.5 flex-shrink-0"
                     fill="none"
@@ -95,7 +104,10 @@ export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
                 </p>
               )}
               {contact?.email && (
-                <p className="flex items-start gap-3">
+                <p
+                  data-tina-field={contact ? tinaField(contact, "email") : undefined}
+                  className="flex items-start gap-3"
+                >
                   <svg
                     className="w-5 h-5 text-bordeaux mt-0.5 flex-shrink-0"
                     fill="none"

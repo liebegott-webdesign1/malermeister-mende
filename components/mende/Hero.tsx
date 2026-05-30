@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
             )}
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <a
-                href="#kontakt"
+                href={data?.primaryCtaHref ?? "#kontakt"}
                 data-tina-field={tinaField(data, "primaryCtaLabel")}
                 className="bg-bordeaux hover:bg-bordeaux-dark text-bordeaux-foreground text-center px-7 py-4 rounded-xl font-semibold shadow-md transition"
               >

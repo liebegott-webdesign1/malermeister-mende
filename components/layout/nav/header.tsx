@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { tinaField } from "tinacms/dist/react";
 import { useLayout } from "../layout-context";
 
 export const Header = () => {
@@ -49,10 +50,16 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group">
-            <span className="font-serif text-2xl sm:text-[1.7rem] font-bold text-ink tracking-tight">
+            <span
+              data-tina-field={brand ? tinaField(brand, "name") : undefined}
+              className="font-serif text-2xl sm:text-[1.7rem] font-bold text-ink tracking-tight"
+            >
               {renderBrand()}
             </span>
-            <span className="text-[11px] tracking-[0.25em] uppercase text-stone mt-0.5">
+            <span
+              data-tina-field={brand ? tinaField(brand, "location") : undefined}
+              className="text-[11px] tracking-[0.25em] uppercase text-stone mt-0.5"
+            >
               {brand?.location ?? "Halle (Saale)"}
             </span>
           </Link>
@@ -66,6 +73,7 @@ export const Header = () => {
                   <div key={index} className="relative group">
                     <button
                       type="button"
+                      data-tina-field={item ? tinaField(item, "label") : undefined}
                       className="nav-link flex items-center gap-1 py-2"
                       aria-haspopup="true"
                     >
@@ -92,6 +100,9 @@ export const Header = () => {
                             <Link
                               key={si}
                               href={href}
+                              data-tina-field={
+                                sub ? tinaField(sub, "label") : undefined
+                              }
                               className="flex items-center justify-between px-5 py-3 text-sm hover:bg-cream hover:text-bordeaux transition"
                             >
                               {sub?.label}
@@ -112,6 +123,7 @@ export const Header = () => {
                 <Link
                   key={index}
                   href={item?.href ?? "#"}
+                  data-tina-field={item ? tinaField(item, "label") : undefined}
                   className="nav-link"
                 >
                   {item?.label}
@@ -125,6 +137,9 @@ export const Header = () => {
             {phoneRaw && (
               <a
                 href={`tel:${phoneRaw}`}
+                data-tina-field={
+                  contact ? tinaField(contact, "phoneDisplay") : undefined
+                }
                 className="flex items-center gap-2 text-ink hover:text-bordeaux transition font-semibold"
               >
                 <svg
@@ -138,7 +153,10 @@ export const Header = () => {
               </a>
             )}
             <a
-              href="/#kontakt"
+              href={globalSettings?.ctaHref ?? "/#kontakt"}
+              data-tina-field={
+                globalSettings ? tinaField(globalSettings, "ctaLabel") : undefined
+              }
               className="bg-bordeaux hover:bg-bordeaux-dark text-bordeaux-foreground px-5 py-2.5 rounded-lg font-semibold text-sm transition shadow-sm"
             >
               {ctaLabel}
@@ -174,7 +192,12 @@ export const Header = () => {
               if (subs.length > 0) {
                 return (
                   <details key={index} className="border-b border-sand/70">
-                    <summary className="flex items-center justify-between py-2.5 cursor-pointer list-none">
+                    <summary
+                      data-tina-field={
+                        item ? tinaField(item, "label") : undefined
+                      }
+                      className="flex items-center justify-between py-2.5 cursor-pointer list-none"
+                    >
                       {item?.label}
                       <svg
                         className="w-4 h-4"
@@ -190,6 +213,9 @@ export const Header = () => {
                           key={si}
                           href={sub?.href ?? "#"}
                           onClick={() => setMenuOpen(false)}
+                          data-tina-field={
+                            sub ? tinaField(sub, "label") : undefined
+                          }
                           className="block py-2"
                         >
                           {sub?.label}
@@ -204,6 +230,7 @@ export const Header = () => {
                   key={index}
                   href={item?.href ?? "#"}
                   onClick={() => setMenuOpen(false)}
+                  data-tina-field={item ? tinaField(item, "label") : undefined}
                   className="block py-2.5 border-b border-sand/70"
                 >
                   {item?.label}
@@ -213,6 +240,9 @@ export const Header = () => {
             <a
               href="/#kontakt"
               onClick={() => setMenuOpen(false)}
+              data-tina-field={
+                globalSettings ? tinaField(globalSettings, "ctaLabel") : undefined
+              }
               className="block mt-3 text-center bg-bordeaux text-bordeaux-foreground px-5 py-3 rounded-lg font-semibold"
             >
               {ctaLabel}

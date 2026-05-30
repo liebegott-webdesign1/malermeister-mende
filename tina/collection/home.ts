@@ -56,6 +56,11 @@ const Home: Collection = {
         },
         {
           type: "string",
+          label: "Primärer CTA — Link (Anker oder URL)",
+          name: "primaryCtaHref",
+        },
+        {
+          type: "string",
           label: "Vertrauenshinweis",
           name: "trustNote",
         },
@@ -154,6 +159,16 @@ const Home: Collection = {
             { type: "string", label: "Link", name: "href" },
           ],
         },
+        {
+          type: "string",
+          label: "Kunstmaler-Link — Beschriftung",
+          name: "kunstmalerCtaLabel",
+        },
+        {
+          type: "string",
+          label: "Kunstmaler-Link — Link (Anker oder URL)",
+          name: "kunstmalerCtaHref",
+        },
       ],
     },
 
@@ -178,10 +193,10 @@ const Home: Collection = {
           list: true,
           ui: {
             itemProps: (item) => ({ label: item?.label }),
-            defaultItem: { key: "all", label: "Alle" },
+            defaultItem: { key: "Alle", label: "Alle" },
           },
           fields: [
-            { type: "string", label: "Schlüssel (key)", name: "key" },
+            { type: "string", label: "Schlüssel (key — identisch zum Label)", name: "key" },
             { type: "string", label: "Label", name: "label" },
           ],
         },
@@ -194,17 +209,37 @@ const Home: Collection = {
             itemProps: (item) => ({
               label: item?.alt || item?.category,
             }),
-            defaultItem: { alt: "Bild", category: "holz" },
+            defaultItem: { alt: "Bild", category: "Holz & Marmor" },
           },
           fields: [
             { type: "image", label: "Bild", name: "image" },
             { type: "string", label: "Alt-Text", name: "alt" },
             {
               type: "string",
-              label: "Kategorie (Filter-key)",
+              label: "Kategorie (muss exakt einem Filter-Label entsprechen)",
               name: "category",
             },
           ],
+        },
+        {
+          type: "string",
+          label: "Primärer CTA — Beschriftung",
+          name: "primaryCtaLabel",
+        },
+        {
+          type: "string",
+          label: "Primärer CTA — Link (Anker oder URL)",
+          name: "primaryCtaHref",
+        },
+        {
+          type: "string",
+          label: "Sekundärer CTA — Beschriftung",
+          name: "secondaryCtaLabel",
+        },
+        {
+          type: "string",
+          label: "Sekundärer CTA — Link (Anker oder URL)",
+          name: "secondaryCtaHref",
         },
       ],
     },
@@ -237,6 +272,11 @@ const Home: Collection = {
           ],
         },
         { type: "string", label: "CTA-Beschriftung", name: "ctaLabel" },
+        {
+          type: "string",
+          label: "CTA-Link (Anker oder URL)",
+          name: "ctaHref",
+        },
       ],
     },
 
@@ -340,6 +380,11 @@ const Home: Collection = {
         { type: "image", label: "Bild", name: "image" },
         { type: "string", label: "Bild-Hinweis", name: "imageNote" },
         { type: "string", label: "CTA-Beschriftung", name: "ctaLabel" },
+        {
+          type: "string",
+          label: "CTA-Link (Anker oder URL)",
+          name: "ctaHref",
+        },
       ],
     },
 

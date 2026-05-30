@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import type { HomeQuery } from "@/tina/__generated__/types";
 
@@ -14,8 +14,21 @@ export interface GalerieProps {
 }
 
 export function Galerie({ data }: GalerieProps) {
-  const [activeKey, setActiveKey] = useState("all");
+  // Der "Alle"-Filter ist konventionsgemäß der erste Eintrag in der Liste.
+  // Sein key dient als "zeige alle"-Schlüssel — kein Hardcode auf "all" mehr,
+  // damit key == label (Florians Wunsch) auch beim "Alle"-Filter funktioniert.
+  const allKey = useMemo(() => {
+    const firstFilter = data?.filters?.find((f) => f);
+    return firstFilter?.key ?? "";
+  }, [data?.filters]);
+
+  const [activeKey, setActiveKey] = useState(allKey);
   const [lightbox, setLightbox] = useState<GalerieItem | null>(null);
+
+  // Falls sich der "Alle"-Key (z. B. durch Tina-Edits) ändert, mitziehen.
+  useEffect(() => {
+    setActiveKey(allKey);
+  }, [allKey]);
 
   // Body-Scroll sperren, solange die Lightbox offen ist + Escape schliesst sie
   useEffect(() => {
@@ -33,7 +46,7 @@ export function Galerie({ data }: GalerieProps) {
 
   const visibleItems = (data?.items ?? []).filter(
     (item): item is GalerieItem =>
-      !!item && (activeKey === "all" || item.category === activeKey),
+      !!item && (activeKey === allKey || item.category === activeKey),
   );
 
   return (
@@ -66,7 +79,7 @@ export function Galerie({ data }: GalerieProps) {
         <div className="flex flex-wrap gap-2 mb-8">
           {data?.filters?.map((filter, i) => {
             if (!filter) return null;
-            const key = filter.key ?? "all";
+            const key = filter.key ?? allKey;
             const isActive = key === activeKey;
             return (
               <button
@@ -110,16 +123,18 @@ export function Galerie({ data }: GalerieProps) {
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           <a
-            href="/der-kunstmaler"
+            href={data?.primaryCtaHref ?? "/der-kunstmaler"}
+            data-tina-field={data ? tinaField(data, "primaryCtaLabel") : undefined}
             className="inline-flex items-center gap-2 bg-bordeaux hover:bg-bordeaux-dark text-bordeaux-foreground px-6 py-3 rounded-xl font-semibold transition"
           >
-            Mehr Gemälde ansehen →
+            {data?.primaryCtaLabel ?? "Mehr Gemälde ansehen"} →
           </a>
           <a
-            href="/holz-und-marmor"
+            href={data?.secondaryCtaHref ?? "/holz-und-marmor"}
+            data-tina-field={data ? tinaField(data, "secondaryCtaLabel") : undefined}
             className="inline-flex items-center gap-2 text-bordeaux font-semibold"
           >
-            Holz &amp; Marmor im Detail →
+            {data?.secondaryCtaLabel ?? "Holz & Marmor im Detail"} →
           </a>
         </div>
       </div>

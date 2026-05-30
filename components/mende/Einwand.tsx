@@ -58,7 +58,7 @@ export function Einwand({ data }: EinwandProps) {
           <div className="mt-12">
             <a
               data-tina-field={tinaField(data, "ctaLabel")}
-              href="#kontakt"
+              href={data?.ctaHref ?? "#kontakt"}
               className="inline-block bg-bordeaux hover:bg-bordeaux-light text-bordeaux-foreground px-7 py-4 rounded-xl font-semibold transition shadow"
             >
               {data.ctaLabel}

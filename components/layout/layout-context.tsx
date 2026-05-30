@@ -1,14 +1,14 @@
 "use client";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import { useTina } from "tinacms/dist/react";
 import { GlobalQuery } from "../../tina/__generated__/types";
 
 interface LayoutState {
+  // globalSettings stammt jetzt aus useTina -> trägt die nicht-enumerierbaren
+  // _content_source-Metadaten. Damit findet tinaField(globalSettings.<obj>, "<feld>")
+  // den richtigen Pfad und Click-to-Edit + Live-Update funktionieren.
   globalSettings: GlobalQuery["global"];
-  setGlobalSettings: React.Dispatch<
-    React.SetStateAction<GlobalQuery["global"]>
-  >;
   pageData: {};
-  setPageData: React.Dispatch<React.SetStateAction<{}>>;
   theme: GlobalQuery["global"]["theme"];
 }
 
@@ -29,30 +29,32 @@ export const useLayout = () => {
 
 interface LayoutProviderProps {
   children: React.ReactNode;
-  globalSettings: GlobalQuery["global"];
+  // Ganze Global-Query (nicht nur .global), plus query + variables —
+  // genau das, was useTina zum Hydratisieren im Browser braucht.
+  query: string;
+  variables: object;
+  data: GlobalQuery;
   pageData: {};
 }
 
 export const LayoutProvider: React.FC<LayoutProviderProps> = ({
   children,
-  globalSettings: initialGlobalSettings,
-  pageData: initialPageData,
+  query,
+  variables,
+  data,
+  pageData,
 }) => {
-  const [globalSettings, setGlobalSettings] = useState<GlobalQuery["global"]>(
-    initialGlobalSettings
-  );
-  const [pageData, setPageData] = useState<{}>(initialPageData);
-
-  const theme = globalSettings?.theme;
+  // useTina injiziert die _content_source-Metadaten und liefert bei jedem
+  // Tastendruck im Editor frische liveData -> globale Felder werden live.
+  const { data: liveData } = useTina({ query, variables, data });
+  const globalSettings = liveData.global;
 
   return (
     <LayoutContext.Provider
       value={{
         globalSettings,
-        setGlobalSettings,
         pageData,
-        setPageData,
-        theme,
+        theme: globalSettings?.theme,
       }}
     >
       {children}

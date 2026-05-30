@@ -64,6 +64,44 @@
     }
   ],
   "ctaLabel": "Angebot anfordern",
+  "ctaHref": "/#kontakt",
+  "footer": {
+    "description": "Meisterbetrieb für klassische Malerarbeiten und dekorative Techniken in Halle (Saale). Vom sauberen Anstrich bis zur Kunstmalerei.",
+    "pages": [
+      {
+        "label": "Leistungen",
+        "href": "/#leistungen"
+      },
+      {
+        "label": "Referenzen",
+        "href": "/#galerie"
+      },
+      {
+        "label": "Holz & Marmor",
+        "href": "/holz-und-marmor"
+      },
+      {
+        "label": "Der Kunstmaler",
+        "href": "/der-kunstmaler"
+      },
+      {
+        "label": "Kontakt",
+        "href": "/#kontakt"
+      }
+    ],
+    "legalLinks": [
+      {
+        "label": "Impressum",
+        "href": "#"
+      },
+      {
+        "label": "Datenschutz",
+        "href": "#"
+      }
+    ],
+    "copyrightName": "Malermeister Steffen Mende",
+    "copyrightTagline": "Meisterbetrieb · Halle (Saale) und Umgebung"
+  },
   "theme": {
     "color": "#800000"
   }

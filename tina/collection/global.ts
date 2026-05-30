@@ -120,6 +120,90 @@ const Global: Collection = {
       name: "ctaLabel",
     },
     {
+      type: "string",
+      label: "CTA-Link (Anker oder URL)",
+      name: "ctaHref",
+    },
+    {
+      type: "object",
+      label: "Footer",
+      name: "footer",
+      fields: [
+        {
+          type: "string",
+          label: "Beschreibungstext",
+          name: "description",
+          ui: {
+            component: "textarea",
+          },
+        },
+        {
+          type: "object",
+          label: "Seiten-Links",
+          name: "pages",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.label };
+            },
+            defaultItem: {
+              label: "Leistungen",
+              href: "/#leistungen",
+            },
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Label",
+              name: "label",
+            },
+            {
+              type: "string",
+              label: "Link (Anker oder URL)",
+              name: "href",
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Rechtliche Links (Impressum, Datenschutz)",
+          name: "legalLinks",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.label };
+            },
+            defaultItem: {
+              label: "Impressum",
+              href: "#",
+            },
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Label",
+              name: "label",
+            },
+            {
+              type: "string",
+              label: "Link (Anker oder URL)",
+              name: "href",
+            },
+          ],
+        },
+        {
+          type: "string",
+          label: "Copyright-Name",
+          name: "copyrightName",
+        },
+        {
+          type: "string",
+          label: "Copyright-Zusatz (rechts)",
+          name: "copyrightTagline",
+        },
+      ],
+    },
+    {
       type: "object",
       label: "Theme",
       name: "theme",
