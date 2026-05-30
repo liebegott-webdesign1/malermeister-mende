@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { tinaField } from "tinacms/dist/react";
 import type { HomeQuery } from "@/tina/__generated__/types";
 import { useLayout } from "../layout/layout-context";
@@ -10,14 +10,71 @@ export interface KontaktProps {
   data?: KontaktData;
 }
 
+// EmailJS-Konfiguration aus Umgebungsvariablen (NEXT_PUBLIC_*, daher clientseitig verfügbar).
+// Fehlt eine davon, läuft das Formular im Demo-Modus (zeigt Erfolg an, sendet aber nichts).
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+const EMAILJS_READY = Boolean(
+  EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY,
+);
+
 export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
   const { globalSettings } = useLayout();
   const contact = globalSettings?.contact;
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  // Zeitpunkt des Mountens — für den Timing-Check (zu schneller Submit = Bot-Verdacht).
+  const mountedAt = useRef<number>(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    if (sending) return;
+    setError(null);
+
+    const fd = new FormData(e.currentTarget);
+
+    // Anti-Bot Stufe 1: Honeypot (verstecktes Feld "website") + Timing-Check (< 2,5 s).
+    // Bei Bot-Verdacht: Erfolg simulieren, aber NICHT senden (Spammer-Täuschung, null Reibung für echte Nutzer).
+    const honeypot = (fd.get("website") as string) || "";
+    const tooFast = Date.now() - mountedAt.current < 2500;
+    if (honeypot.trim() !== "" || tooFast) {
+      setSent(true);
+      return;
+    }
+
+    // Demo-Modus: keine EmailJS-Konfiguration hinterlegt -> Erfolg zeigen, aber nichts senden.
+    if (!EMAILJS_READY) {
+      setSent(true);
+      return;
+    }
+
+    setSending(true);
+    try {
+      const emailjs = (await import("@emailjs/browser")).default;
+      await emailjs.send(
+        EMAILJS_SERVICE_ID!,
+        EMAILJS_TEMPLATE_ID!,
+        {
+          name: (fd.get("name") as string) || "",
+          kontakt: (fd.get("kontakt") as string) || "",
+          anliegen: (fd.get("anliegen") as string) || "",
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY! },
+      );
+      setSent(true);
+    } catch {
+      setError(
+        "Das Senden hat leider nicht geklappt. Bitte rufen Sie uns kurz an — oder versuchen Sie es gleich noch einmal.",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -130,8 +187,17 @@ export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
           {/* Rechte Spalte: Demo-Formular */}
           <div className="bg-white rounded-2xl p-7 sm:p-9 ring-1 ring-sand shadow-md">
             {!sent ? (
-              <form onSubmit={handleSubmit}>
+              <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="space-y-5">
+                  {/* Honeypot: für Menschen unsichtbar (bewusst NICHT display:none — das überspringen Bots). */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }}
+                  />
                   <div>
                     <label
                       htmlFor="name"
@@ -195,11 +261,20 @@ export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
                       zur Bearbeitung der Anfrage verwendet werden.
                     </span>
                   </label>
+                  {error && (
+                    <p
+                      role="alert"
+                      className="text-sm text-red-700 bg-red-50 ring-1 ring-red-200 rounded-lg px-4 py-3"
+                    >
+                      {error}
+                    </p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full bg-bordeaux hover:bg-bordeaux-dark text-bordeaux-foreground font-semibold py-4 rounded-xl transition shadow"
+                    disabled={sending}
+                    className="w-full bg-bordeaux hover:bg-bordeaux-dark text-bordeaux-foreground font-semibold py-4 rounded-xl transition shadow disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Kostenloses Angebot anfordern
+                    {sending ? "Wird gesendet …" : "Kostenloses Angebot anfordern"}
                   </button>
                   <p className="text-xs text-stone text-center">
                     Unverbindlich &amp; kostenlos · Rückruf in der Regel am
@@ -229,7 +304,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ data }) => {
                   Vielen Dank!
                 </h3>
                 <p className="mt-2 text-stone">
-                  Ihre Anfrage ist eingegangen (Demo). Wir melden uns in der
+                  Ihre Anfrage ist eingegangen. Wir melden uns in der
                   Regel am nächsten Werktag. Sie haben es eilig?{" "}
                   {contact?.phoneRaw ? (
                     <a
