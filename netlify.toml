@@ -8,6 +8,7 @@
   # Online-Editieren via /admin folgt, sobald der Tina-Cloud-Schema-Sync sauber ist
   # -> dann zurueck auf "npm run build".
   command = "npm run build-local"
+  publish = "out"
 
 [build.environment]
   # NEXT_PUBLIC_* sind ohnehin oeffentlich (landen im Browser-Bundle) -> hier ok:
