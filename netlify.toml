@@ -3,7 +3,11 @@
 # (Site settings -> Environment variables), damit er nicht oeffentlich im Repo steht.
 
 [build]
-  command = "npm run build"
+  # build-local: baut die statische Seite aus den Repo-Inhalten (lokaler Datalayer),
+  # entkoppelt vom Tina-Cloud-Schema-Check. Bringt die OEFFENTLICHE Seite zuverlaessig live.
+  # Online-Editieren via /admin folgt, sobald der Tina-Cloud-Schema-Sync sauber ist
+  # -> dann zurueck auf "npm run build".
+  command = "npm run build-local"
 
 [build.environment]
   # NEXT_PUBLIC_* sind ohnehin oeffentlich (landen im Browser-Bundle) -> hier ok:
