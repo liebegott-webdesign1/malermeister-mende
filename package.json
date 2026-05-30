@@ -9,7 +9,8 @@
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
     "lint": "biome lint",
-    "dev:build": "next build"
+    "dev:build": "next build",
+    "postinstall": "node scripts/germanize-tina.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
