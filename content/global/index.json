@@ -20,13 +20,34 @@
       "label": "Leistungen & Techniken",
       "href": "",
       "dropdown": [
-        { "label": "Holz & Marmor", "href": "/holz-und-marmor" },
-        { "label": "Stuckmarmor", "href": "/#galerie" },
-        { "label": "Lasurtechniken", "href": "/#galerie" },
-        { "label": "Spritzarbeiten", "href": "/#galerie" },
-        { "label": "Tapezierarbeiten", "href": "/#galerie" },
-        { "label": "Dekor & Kreativtechnik", "href": "/#galerie" },
-        { "label": "Kunstmalerei", "href": "/der-kunstmaler" }
+        {
+          "label": "Holz & Marmor",
+          "href": "/holz-und-marmor"
+        },
+        {
+          "label": "Stuckmarmor",
+          "href": "/#galerie"
+        },
+        {
+          "label": "Lasurtechniken",
+          "href": "/#galerie"
+        },
+        {
+          "label": "Spritzarbeiten",
+          "href": "/#galerie"
+        },
+        {
+          "label": "Tapezierarbeiten",
+          "href": "/#galerie"
+        },
+        {
+          "label": "Dekor & Kreativtechnik",
+          "href": "/#galerie"
+        },
+        {
+          "label": "Kunstmalerei",
+          "href": "/der-kunstmaler"
+        }
       ]
     },
     {
@@ -44,6 +65,6 @@
   ],
   "ctaLabel": "Angebot anfordern",
   "theme": {
-    "color": "#166534"
+    "color": "#800000"
   }
 }
