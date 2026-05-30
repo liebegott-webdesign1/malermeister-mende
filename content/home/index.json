@@ -10,7 +10,7 @@
     "subline": "Vom sauberen Anstrich bis zur kunstvollen Wandgestaltung: Meisterhandwerk, dekorative Techniken wie Stuckmarmor und Lasuren — und ein Maler, der auch Kunstmaler ist. Festangebot nach Vor-Ort-Termin, schriftlich und unverbindlich.",
     "primaryCtaLabel": "Kostenloses Angebot anfordern",
     "trustNote": "Unverbindlich & kostenlos · Persönliche Beratung in Halle und Umgebung",
-    "image": "/assets/bilder/IMG_7713_Kopie.webp"
+    "image": "/assets/bilder/Seiten/IMG_7713_Kopie.webp"
   },
   "trustBar": [
     { "title": "Meisterbetrieb", "subtitle": "geprüfte Qualität" },
@@ -43,37 +43,37 @@
     "intro": "Vom klassischen Anstrich bis zur Kreativtechnik — alles aus einer Meisterhand.",
     "items": [
       {
-        "image": "/assets/bilder/Filzen_1.webp",
+        "image": "/assets/bilder/Seiten/Filzen_1.webp",
         "title": "Klassische Malerarbeiten",
         "text": "Decken und Wände in sauberer Ausführung — innen, in jeder Farbe.",
         "href": "#galerie"
       },
       {
-        "image": "/assets/bilder/Tapezierarbeiten_4.webp",
+        "image": "/assets/bilder/Tapezieren/Tapezierarbeiten_4.webp",
         "title": "Tapezierarbeiten",
         "text": "Rauhfaser, Gewebe, edle Wandbeläge und Baumwollbeschichtung.",
         "href": "#galerie"
       },
       {
-        "image": "/assets/bilder/Lackierarbeiten.webp",
+        "image": "/assets/bilder/Seiten/Lackierarbeiten.webp",
         "title": "Lackierarbeiten",
         "text": "Fenster, Türen, Heizkörper und Eisenwerk inkl. Korrosionsschutz.",
         "href": "#galerie"
       },
       {
-        "image": "/assets/bilder/IMG_3124.webp",
+        "image": "/assets/bilder/Spritzarbeiten/IMG_3124.webp",
         "title": "Spritzarbeiten (Airless)",
         "text": "Großflächig, gleichmäßig und schnell — auch für Spezialobjekte.",
         "href": "#galerie"
       },
       {
-        "image": "/assets/bilder/Saeule_Stucco.webp",
+        "image": "/assets/bilder/Holz & Marmor/Saeule_Stucco.webp",
         "title": "Holz & Marmor / Stuckmarmor",
         "text": "Edle Imitationstechniken und Stuckmarmor wie aus der Restaurierung.",
         "href": "/holz-und-marmor"
       },
       {
-        "image": "/assets/bilder/Lasur_Marmorlook.webp",
+        "image": "/assets/bilder/Lasurtechniken/Lasur_Marmorlook.webp",
         "title": "Lasuren & Kreativtechnik",
         "text": "Wandlasuren, Metalleffekte, Wickeltechnik — Oberflächen mit Charakter.",
         "href": "#galerie"
@@ -95,39 +95,39 @@
       { "key": "Kunstmalerei", "label": "Kunstmalerei" }
     ],
     "items": [
-      { "image": "/assets/bilder/Saeule_Stucco.webp", "alt": "Säule in Stuckmarmor-Technik", "category": "Holz & Marmor" },
-      { "image": "/assets/bilder/Azul_do_Macaubas.webp", "alt": "Marmorimitation Azul do Macaubas", "category": "Holz & Marmor" },
-      { "image": "/assets/bilder/Grosse_antike_Brekzie.webp", "alt": "Marmorimitation antike Brekzie", "category": "Holz & Marmor" },
-      { "image": "/assets/bilder/Rosenholz.webp", "alt": "Holzimitation Rosenholz", "category": "Holz & Marmor" },
-      { "image": "/assets/bilder/Zitronenholz_Schatten.webp", "alt": "Holzimitation Zitronenholz", "category": "Holz & Marmor" },
-      { "image": "/assets/bilder/Lebensbaum.webp", "alt": "Holzdekor Lebensbaum", "category": "Holz & Marmor" },
-      { "image": "/assets/bilder/Dachs_Schlaeger_Schatten.webp", "alt": "Detailarbeit Holz und Marmor", "category": "Holz & Marmor" },
-      { "image": "/assets/bilder/Glaettung.webp", "alt": "Glättung von Stuckmarmor", "category": "Stuckmarmor" },
-      { "image": "/assets/bilder/Rakeln.webp", "alt": "Rakeln von Stuckmarmor", "category": "Stuckmarmor" },
-      { "image": "/assets/bilder/Scheiben_schneiden.webp", "alt": "Stuckmarmor Scheiben schneiden", "category": "Stuckmarmor" },
-      { "image": "/assets/bilder/Marmorwuerfel_Imitat.webp", "alt": "Marmorwürfel-Imitat aus Stuckmarmor", "category": "Stuckmarmor" },
-      { "image": "/assets/bilder/Staeuben.webp", "alt": "Stuckmarmor stäuben", "category": "Stuckmarmor" },
-      { "image": "/assets/bilder/Lasur_Marmorlook.webp", "alt": "Wandlasur im Marmorlook", "category": "Lasurtechniken" },
-      { "image": "/assets/bilder/Lasur_2.webp", "alt": "Wandlasur Beispiel", "category": "Lasurtechniken" },
-      { "image": "/assets/bilder/Lasur_3.webp", "alt": "Wandlasur Beispiel", "category": "Lasurtechniken" },
-      { "image": "/assets/bilder/Metalliclasur.webp", "alt": "Metalliclasur an der Wand", "category": "Lasurtechniken" },
-      { "image": "/assets/bilder/Lasur_TE_1.webp", "alt": "Lasurtechnik Detail", "category": "Lasurtechniken" },
-      { "image": "/assets/bilder/IMG_3124.webp", "alt": "Airless-Spritzarbeiten", "category": "Spritzarbeiten" },
-      { "image": "/assets/bilder/Wohnwagen_gespritzt.webp", "alt": "Wohnwagen im Airless-Verfahren gespritzt", "category": "Spritzarbeiten" },
-      { "image": "/assets/bilder/Tapezierarbeiten_1.webp", "alt": "Tapezierarbeiten", "category": "Tapezieren" },
-      { "image": "/assets/bilder/Tapezierarbeiten_3.webp", "alt": "Tapezierarbeiten", "category": "Tapezieren" },
-      { "image": "/assets/bilder/Tapezierarbeiten_4.webp", "alt": "Tapezierarbeiten", "category": "Tapezieren" },
-      { "image": "/assets/bilder/IMG_7837.webp", "alt": "Tapezierte Wand", "category": "Tapezieren" },
-      { "image": "/assets/bilder/Metalleffekt.webp", "alt": "Metalleffekt-Oberfläche", "category": "Dekor & Kreativ" },
-      { "image": "/assets/bilder/Saeule_Violett.webp", "alt": "Dekorative Säulengestaltung", "category": "Dekor & Kreativ" },
-      { "image": "/assets/bilder/Gold_auf_Gruen.webp", "alt": "Dekortechnik Gold auf Grün", "category": "Dekor & Kreativ" },
-      { "image": "/assets/bilder/Schlagmetall_1.webp", "alt": "Schlagmetall-Technik", "category": "Dekor & Kreativ" },
-      { "image": "/assets/bilder/Urzeittier_Echse.webp", "alt": "Kreative Wandgestaltung Motiv", "category": "Dekor & Kreativ" },
-      { "image": "/assets/bilder/Loch_Ness.webp", "alt": "Dekorative Struktur Loch Ness", "category": "Dekor & Kreativ" },
-      { "image": "/assets/bilder/Marktplatz_40x50.webp", "alt": "Gemälde Marktplatz Halle", "category": "Kunstmalerei" },
-      { "image": "/assets/bilder/Domplatz_40X30.webp", "alt": "Gemälde Domplatz Halle", "category": "Kunstmalerei" },
-      { "image": "/assets/bilder/Giebichenstein_30x40.webp", "alt": "Gemälde Burg Giebichenstein", "category": "Kunstmalerei" },
-      { "image": "/assets/bilder/Eselsbrunnen_24X30_-_Kopie.webp", "alt": "Gemälde Eselsbrunnen Halle", "category": "Kunstmalerei" }
+      { "image": "/assets/bilder/Holz & Marmor/Saeule_Stucco.webp", "alt": "Säule in Stuckmarmor-Technik", "category": "Holz & Marmor" },
+      { "image": "/assets/bilder/Holz & Marmor/Azul_do_Macaubas.webp", "alt": "Marmorimitation Azul do Macaubas", "category": "Holz & Marmor" },
+      { "image": "/assets/bilder/Holz & Marmor/Grosse_antike_Brekzie.webp", "alt": "Marmorimitation antike Brekzie", "category": "Holz & Marmor" },
+      { "image": "/assets/bilder/Holz & Marmor/Rosenholz.webp", "alt": "Holzimitation Rosenholz", "category": "Holz & Marmor" },
+      { "image": "/assets/bilder/Holz & Marmor/Zitronenholz_Schatten.webp", "alt": "Holzimitation Zitronenholz", "category": "Holz & Marmor" },
+      { "image": "/assets/bilder/Holz & Marmor/Lebensbaum.webp", "alt": "Holzdekor Lebensbaum", "category": "Holz & Marmor" },
+      { "image": "/assets/bilder/Holz & Marmor/Dachs_Schlaeger_Schatten.webp", "alt": "Detailarbeit Holz und Marmor", "category": "Holz & Marmor" },
+      { "image": "/assets/bilder/Stuckmarmor/Glaettung.webp", "alt": "Glättung von Stuckmarmor", "category": "Stuckmarmor" },
+      { "image": "/assets/bilder/Stuckmarmor/Rakeln.webp", "alt": "Rakeln von Stuckmarmor", "category": "Stuckmarmor" },
+      { "image": "/assets/bilder/Stuckmarmor/Scheiben_schneiden.webp", "alt": "Stuckmarmor Scheiben schneiden", "category": "Stuckmarmor" },
+      { "image": "/assets/bilder/Stuckmarmor/Marmorwuerfel_Imitat.webp", "alt": "Marmorwürfel-Imitat aus Stuckmarmor", "category": "Stuckmarmor" },
+      { "image": "/assets/bilder/Stuckmarmor/Staeuben.webp", "alt": "Stuckmarmor stäuben", "category": "Stuckmarmor" },
+      { "image": "/assets/bilder/Lasurtechniken/Lasur_Marmorlook.webp", "alt": "Wandlasur im Marmorlook", "category": "Lasurtechniken" },
+      { "image": "/assets/bilder/Lasurtechniken/Lasur_2.webp", "alt": "Wandlasur Beispiel", "category": "Lasurtechniken" },
+      { "image": "/assets/bilder/Lasurtechniken/Lasur_3.webp", "alt": "Wandlasur Beispiel", "category": "Lasurtechniken" },
+      { "image": "/assets/bilder/Lasurtechniken/Metalliclasur.webp", "alt": "Metalliclasur an der Wand", "category": "Lasurtechniken" },
+      { "image": "/assets/bilder/Lasurtechniken/Lasur_TE_1.webp", "alt": "Lasurtechnik Detail", "category": "Lasurtechniken" },
+      { "image": "/assets/bilder/Spritzarbeiten/IMG_3124.webp", "alt": "Airless-Spritzarbeiten", "category": "Spritzarbeiten" },
+      { "image": "/assets/bilder/Spritzarbeiten/Wohnwagen_gespritzt.webp", "alt": "Wohnwagen im Airless-Verfahren gespritzt", "category": "Spritzarbeiten" },
+      { "image": "/assets/bilder/Tapezieren/Tapezierarbeiten_1.webp", "alt": "Tapezierarbeiten", "category": "Tapezieren" },
+      { "image": "/assets/bilder/Tapezieren/Tapezierarbeiten_3.webp", "alt": "Tapezierarbeiten", "category": "Tapezieren" },
+      { "image": "/assets/bilder/Tapezieren/Tapezierarbeiten_4.webp", "alt": "Tapezierarbeiten", "category": "Tapezieren" },
+      { "image": "/assets/bilder/Tapezieren/IMG_7837.webp", "alt": "Tapezierte Wand", "category": "Tapezieren" },
+      { "image": "/assets/bilder/Dekor & Kreativ/Metalleffekt.webp", "alt": "Metalleffekt-Oberfläche", "category": "Dekor & Kreativ" },
+      { "image": "/assets/bilder/Dekor & Kreativ/Saeule_Violett.webp", "alt": "Dekorative Säulengestaltung", "category": "Dekor & Kreativ" },
+      { "image": "/assets/bilder/Dekor & Kreativ/Gold_auf_Gruen.webp", "alt": "Dekortechnik Gold auf Grün", "category": "Dekor & Kreativ" },
+      { "image": "/assets/bilder/Dekor & Kreativ/Schlagmetall_1.webp", "alt": "Schlagmetall-Technik", "category": "Dekor & Kreativ" },
+      { "image": "/assets/bilder/Dekor & Kreativ/Urzeittier_Echse.webp", "alt": "Kreative Wandgestaltung Motiv", "category": "Dekor & Kreativ" },
+      { "image": "/assets/bilder/Dekor & Kreativ/Loch_Ness.webp", "alt": "Dekorative Struktur Loch Ness", "category": "Dekor & Kreativ" },
+      { "image": "/assets/bilder/Kunstmalerei/Marktplatz_40x50.webp", "alt": "Gemälde Marktplatz Halle", "category": "Kunstmalerei" },
+      { "image": "/assets/bilder/Kunstmalerei/Domplatz_40X30.webp", "alt": "Gemälde Domplatz Halle", "category": "Kunstmalerei" },
+      { "image": "/assets/bilder/Kunstmalerei/Giebichenstein_30x40.webp", "alt": "Gemälde Burg Giebichenstein", "category": "Kunstmalerei" },
+      { "image": "/assets/bilder/Kunstmalerei/Eselsbrunnen_24X30_-_Kopie.webp", "alt": "Gemälde Eselsbrunnen Halle", "category": "Kunstmalerei" }
     ]
   },
   "einwand": {
@@ -189,7 +189,7 @@
         "text": "Für Sie heißt das: ein fester Ansprechpartner, ein geschultes Auge für Gestaltung und Qualität, von der ersten Beratung bis zur Endreinigung."
       }
     ],
-    "image": "/assets/iStock-2169196050.webp",
+    "image": "/assets/bilder/Seiten/iStock-2169196050.webp",
     "imageNote": "Foto folgt",
     "ctaLabel": "Mehr über den Kunstmaler →"
   },

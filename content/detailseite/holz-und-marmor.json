@@ -8,7 +8,7 @@
     "headlineLead": "Holz & Marmor —",
     "headlineHighlight": "edle Imitationstechniken",
     "subline": "Marmor, der keiner ist. Holz, das gemalt wurde. Wir gestalten Oberflächen in feinster Holz- und Marmorimitation sowie echtem Stuckmarmor — eine handwerkliche Königsdisziplin, die viele Malerbetriebe nicht beherrschen.",
-    "image": "/assets/bilder/Saeule_Stucco.webp",
+    "image": "/assets/bilder/Holz & Marmor/Saeule_Stucco.webp",
     "imageAlt": "Säule in Stuckmarmor-Technik von Malermeister Mende",
     "primaryCtaLabel": "Kostenloses Angebot anfordern",
     "primaryCtaHref": "/#kontakt",
@@ -46,67 +46,67 @@
     "intro": "Echte Arbeiten und Techniken — tippen Sie ein Bild an, um es groß zu sehen.",
     "items": [
       {
-        "image": "/assets/bilder/Saeule_Stucco.webp",
+        "image": "/assets/bilder/Holz & Marmor/Saeule_Stucco.webp",
         "alt": "Säule in Stuckmarmor"
       },
       {
-        "image": "/assets/bilder/Azul_do_Macaubas.webp",
+        "image": "/assets/bilder/Holz & Marmor/Azul_do_Macaubas.webp",
         "alt": "Marmorimitation Azul do Macaubas"
       },
       {
-        "image": "/assets/bilder/Grosse_antike_Brekzie.webp",
+        "image": "/assets/bilder/Holz & Marmor/Grosse_antike_Brekzie.webp",
         "alt": "Marmorimitation antike Brekzie"
       },
       {
-        "image": "/assets/bilder/Rosenholz.webp",
+        "image": "/assets/bilder/Holz & Marmor/Rosenholz.webp",
         "alt": "Holzimitation Rosenholz"
       },
       {
-        "image": "/assets/bilder/Zitronenholz_Schatten.webp",
+        "image": "/assets/bilder/Holz & Marmor/Zitronenholz_Schatten.webp",
         "alt": "Holzimitation Zitronenholz"
       },
       {
-        "image": "/assets/bilder/Lebensbaum.webp",
+        "image": "/assets/bilder/Holz & Marmor/Lebensbaum.webp",
         "alt": "Holzdekor Lebensbaum"
       },
       {
-        "image": "/assets/bilder/Dachs_Schlaeger_Schatten.webp",
+        "image": "/assets/bilder/Holz & Marmor/Dachs_Schlaeger_Schatten.webp",
         "alt": "Detailarbeit Holz und Marmor"
       },
       {
-        "image": "/assets/bilder/Emmenegger_2.webp",
+        "image": "/assets/bilder/Holz & Marmor/Emmenegger_2.webp",
         "alt": "Marmortechnik Detail"
       },
       {
-        "image": "/assets/bilder/Schiessl2.webp",
+        "image": "/assets/bilder/Holz & Marmor/Schiessl2.webp",
         "alt": "Stuckmarmor Arbeitsprobe"
       },
       {
-        "image": "/assets/bilder/Marmorwuerfel_Imitat.webp",
+        "image": "/assets/bilder/Stuckmarmor/Marmorwuerfel_Imitat.webp",
         "alt": "Marmorwürfel-Imitat aus Stuckmarmor"
       },
       {
-        "image": "/assets/bilder/Glaettung.webp",
+        "image": "/assets/bilder/Stuckmarmor/Glaettung.webp",
         "alt": "Glättung von Stuckmarmor"
       },
       {
-        "image": "/assets/bilder/Rakeln.webp",
+        "image": "/assets/bilder/Stuckmarmor/Rakeln.webp",
         "alt": "Rakeln von Stuckmarmor"
       },
       {
-        "image": "/assets/bilder/Raspeln.webp",
+        "image": "/assets/bilder/Stuckmarmor/Raspeln.webp",
         "alt": "Stuckmarmor raspeln"
       },
       {
-        "image": "/assets/bilder/Scheiben_schneiden.webp",
+        "image": "/assets/bilder/Stuckmarmor/Scheiben_schneiden.webp",
         "alt": "Stuckmarmor Scheiben schneiden"
       },
       {
-        "image": "/assets/bilder/Staeuben.webp",
+        "image": "/assets/bilder/Stuckmarmor/Staeuben.webp",
         "alt": "Stuckmarmor stäuben"
       },
       {
-        "image": "/assets/bilder/Stuckmarmor_Faktenauslese.webp",
+        "image": "/assets/bilder/Holz & Marmor/Stuckmarmor_Faktenauslese.webp",
         "alt": "Stuckmarmor Faktenauslese"
       }
     ]
