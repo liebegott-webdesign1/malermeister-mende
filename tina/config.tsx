@@ -22,7 +22,9 @@ const config = defineConfig({
     // this is the config for the tina cloud media store
     tina: {
       publicFolder: "public",
-      mediaRoot: "uploads",
+      // Mende-Bilder liegen unter public/assets/bilder/ (Content referenziert /assets/bilder/...).
+      // Vorher "uploads" → Media Manager zeigte nur die Demo-Reste des Tina-Starters.
+      mediaRoot: "assets/bilder",
     },
   },
   build: {
